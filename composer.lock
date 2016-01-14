@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "748ee7206a71cc979742ef246b8f0e24",
-    "content-hash": "fc520767170354f6fdee8faa2a204716",
+    "hash": "cdac955888182cd1e20932d833390aff",
+    "content-hash": "ac780d94260e8c2c5d9af2914050a686",
     "packages": [
         {
             "name": "composer/installers",
@@ -104,80 +104,12 @@
                 "zikula"
             ],
             "time": "2015-10-29 23:28:48"
-        },
-        {
-            "name": "wpsitecare/carelib",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wpsitecare/carelib.git",
-                "reference": "70ebabb299f1899661884bca2e63f727a94d23c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wpsitecare/carelib/zipball/70ebabb299f1899661884bca2e63f727a94d23c9",
-                "reference": "70ebabb299f1899661884bca2e63f727a94d23c9",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Robert Neu",
-                    "email": "rob@wpsitecare.com",
-                    "homepage": "http://www.wpsitecare.com"
-                }
-            ],
-            "description": "A collection of helpful classes to make creating an awesome theme more enjoyable.",
-            "homepage": "https://github.com/wpsitecare/carelib",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-11-12 06:46:11"
-        },
-        {
-            "name": "zamoose/themehookalliance",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zamoose/themehookalliance.git",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zamoose/themehookalliance/zipball/969c949df8c0a9740f27b88755d053762be5d283",
-                "reference": "969c949df8c0a9740f27b88755d053762be5d283",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Doug Stewart",
-                    "homepage": "http://literalbarrage.org"
-                }
-            ],
-            "description": "Theme Hook Alliance",
-            "homepage": "https://github.com/zamoose/themehookalliance",
-            "keywords": [
-                "wordpress"
-            ],
-            "time": "2015-08-05 03:42:29"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "wpsitecare/carelib": 20,
-        "zamoose/themehookalliance": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
