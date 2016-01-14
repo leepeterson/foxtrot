@@ -11,6 +11,10 @@ module.exports = {
 				{
 					match: /Foxtrot/g,
 					replacement: '<%= package.capitalname %>'
+				},
+				{
+					match: /FOXTROT/g,
+					replacement: '<%= package.uppername %>'
 				}
 			]
 		},
