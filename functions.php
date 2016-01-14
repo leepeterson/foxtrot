@@ -11,8 +11,25 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * The name of the child theme. Should match the info in style.css.
+ *
+ * @since 0.1.0
+ */
 define( 'CHILD_THEME_NAME', 'Foxtrot' );
+
+/**
+ * The URL where information about the child theme can be found.
+ *
+ * @since 0.1.0
+ */
 define( 'CHILD_THEME_URL', 'http://www.wpsitecare.com/genesis-sample-theme' );
+
+/**
+ * The current version of the child theme. Should match the version in style.css.
+ *
+ * @since 0.1.0
+ */
 define( 'CHILD_THEME_VERSION', '0.1.0' );
 
 /**
