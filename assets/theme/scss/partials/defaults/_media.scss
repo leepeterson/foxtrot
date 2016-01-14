@@ -1,0 +1,20 @@
+embed,
+iframe,
+img,
+object,
+video,
+.wp-caption {
+	max-width: 100%;
+}
+
+img {
+	height: auto;
+	margin: 0;
+	max-width: 100%;
+}
+
+a:hover img,
+a:focus img {
+	transition: opacity 0.2s ease-in-out;
+	opacity: 0.9;
+}

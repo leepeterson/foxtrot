@@ -1,0 +1,133 @@
+/* Site Containers
+--------------------------------------------- */
+
+.site-container {
+	position: relative;
+}
+
+.site-inner {
+	clear: both;
+	padding-top: 5%;
+	word-wrap: break-word;
+	word-break: normal;
+
+	@include min-screen($smaller-screen) {
+		padding-top: $site-inner-padding;
+	}
+}
+
+.site-inner,
+.wrap {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: $base-wrap-max-width;
+	padding-left: 5%;
+	padding-right: 5%;
+
+	@include min-screen($small-screen) {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	@include min-screen($medium-screen) {
+		max-width: $wrap-max-width-medium;
+	}
+
+	@include min-screen($large-screen) {
+		max-width: $wrap-max-width-large;
+	}
+}
+
+/* Column Widths and Positions
+--------------------------------------------- */
+
+/* Content
+-------------------- */
+
+.layout-1c-narrow .content {
+	padding: 0;
+}
+
+@include min-screen($medium-screen) {
+
+	.layout-1c-narrow .content {
+		@include pad(15%);
+	}
+
+	.layout-2c-l .content,
+	.layout-2c-r .content {
+		@include span(8 of 12);
+	}
+
+	.layout-2c-l .content {
+		@include last();
+	}
+
+	/* Primary Sidebar
+	-------------------- */
+	.sidebar {
+		@include span(4 of 12);
+	}
+
+	.layout-2c-r .sidebar {
+		@include last();
+	}
+
+	/* Secondary Sidebar
+	-------------------- */
+	.sidebar-secondary {
+		@include span(2 of 12);
+	}
+
+	.content-sidebar-sidebar .sidebar-secondary {
+		@include last();
+	}
+}
+
+.layout-1c .sidebar,
+.layout-1c-narrow .sidebar {
+	display: none;
+}
+
+/* Column Classes
+--------------------------------------------- */
+
+@include min-screen($small-screen) {
+	@include nested(12) {
+		.one-half,
+		.three-sixths,
+		.two-fourths {
+			@include span(6);
+		}
+
+		.one-third,
+		.two-sixths {
+			@include span(4);
+		}
+
+		.four-sixths,
+		.two-thirds {
+			@include span(8);
+		}
+
+		.one-fourth {
+			@include span(3);
+		}
+
+		.three-fourths {
+			@include span(9);
+		}
+
+		.one-sixth {
+			@include span(2);
+		}
+
+		.five-sixths {
+			@include span(10);
+		}
+	}
+
+	.last {
+		@include last();
+	}
+}

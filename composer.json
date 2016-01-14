@@ -1,0 +1,24 @@
+{
+  "name": "wpsitecare/foxtrot",
+  "description": "The WP Site Care Genesis starter theme.",
+  "keywords": ["wordpress", "theme", "genesis", "wpsitecare"],
+  "homepage": "http://www.wpsitecare.com",
+  "type": "wordpress-theme",
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "Robert Neu",
+      "email": "rob@wpsitecare.com",
+      "homepage": "http://www.wpsitecare.com"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/wpsitecare/foxtrot/issues"
+  },
+  "config": {
+    "vendor-dir": "assets/composer"
+  },
+  "require": {
+    "composer/installers": "~1.0"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "name": "foxtrot",
+  "capitalname": "Foxtrot",
+  "textdomain": "foxtrot",
+  "version": "1.0.0",
+  "copyright": "2015",
+  "license": "GPL-2.0+",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/wpsitecare/foxtrot/issues"
+  },
+  "contributors": [
+    {
+      "name": "Robert Neu",
+      "url": "http://www.wpsitecare.com"
+    },
+    {
+      "name": "Ozzy Rodriguez",
+      "url": "http://www.wpsitecare.com"
+    }
+  ],
+  "pot": {
+    "reportmsgidbugsto": "WP Site Care <translations@wpsitecare.com>",
+    "lasttranslator": "WP Site Care <translations@wpsitecare.com>",
+    "languageteam": "WP Site Care <translations@wpsitecare.com>"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wpsitecare/foxtrot.git"
+  },
+  "devDependencies": {
+    "sitecare-theme-config": "wpsitecare/sitecare-theme-config",
+    "load-project-config": "~0.2.0"
+  }
+}

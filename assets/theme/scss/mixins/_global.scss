@@ -1,0 +1,153 @@
+// Utility
+//------------------------------------------------------------------------------
+@mixin clearfix {
+	&::after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+}
+
+// Typography
+//------------------------------------------------------------------------------
+@mixin h1-font-size {
+	font-size: $h1-font-size-small;
+
+	@include min-screen($small-screen) {
+		font-size: $h1-font-size;
+	}
+}
+
+@mixin h2-font-size {
+	font-size: $h2-font-size-small;
+
+	@include min-screen($small-screen) {
+		font-size: $h2-font-size;
+	}
+}
+
+@mixin h3-font-size {
+	font-size: $h3-font-size-small;
+
+	@include min-screen($small-screen) {
+		font-size: $h3-font-size;
+	}
+}
+
+// Icons
+//------------------------------------------------------------------------------
+@mixin icon-before($glyph, $family, $margin) {
+	&:before {
+		@extend %icon-base;
+		content: $glyph;
+		font-family: $family;
+		margin-right: $margin;
+	}
+}
+
+@mixin icon-after($glyph, $family, $margin) {
+	&:after {
+		@extend %icon-base;
+		content: $glyph;
+		font-family: $family;
+		margin-left: $margin;
+	}
+}
+
+@mixin ti-before($glyph, $margin: 5px) {
+	@include icon-before($glyph, 'themicons', $margin);
+}
+
+@mixin ti-after($glyph, $margin: 5px) {
+	@include icon-after($glyph, 'themicons', $margin);
+}
+
+// Content Area
+//------------------------------------------------------------------------------
+@mixin entry-content() {
+	p,
+	> ol,
+	> ul,
+	> dl {
+		margin-bottom: $content-margin-small;
+
+		@include min-screen($small-screen) {
+			margin-bottom: $content-margin;
+		}
+	}
+
+	ol,
+	ul {
+		margin-left: 20px;
+
+		@include min-screen($small-screen) {
+			margin-left: $base-padding;
+		}
+	}
+
+	li {
+		margin-bottom: 1%;
+	}
+
+	ol > li {
+		list-style-type: decimal;
+	}
+
+	ul > li {
+		list-style-type: disc;
+	}
+
+	li ol,
+	li ul {
+		margin-top: 1%;
+	}
+
+	blockquote {
+		border-left: 7px solid $blockquote-border-color;
+		margin: 4% 5% 4% 0;
+		padding: 0 0 0 5%;
+	}
+
+	table {
+		border-collapse: separate;
+		border: 1px solid $table-border-color;
+		border-left: 0;
+		margin: 20px 0;
+		width: 100%;
+	}
+
+	table th,
+	table td {
+		border-left: 1px solid $table-border-color;
+		border-top: 1px solid $table-border-color;
+		line-height: 1.2;
+		padding: 10px;
+		text-align: left;
+		vertical-align: top;
+	}
+
+	table thead:first-child tr:first-child th,
+	table tbody:first-child tr:first-child th,
+	table tbody:first-child tr:first-child td {
+		border-top: 0 none;
+	}
+
+	code {
+		background: $code-background-color;
+		border: 1px solid $code-border-color;
+		color: $code-font-color;
+		padding: 2px 4px;
+	}
+
+	.wp-caption .wp-caption-text {
+		margin: 10px 0;
+		font-size: $wp-caption-font-size;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		line-height: 1.2;
+	}
+
+	.search-form {
+		margin-bottom: $content-margin;
+	}
+}
