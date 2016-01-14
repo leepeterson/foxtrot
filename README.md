@@ -1,4 +1,4 @@
-# Alpha
+# Foxtrot
 
 The WP Site Care Genesis sample theme.
 
