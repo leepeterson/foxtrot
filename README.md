@@ -31,7 +31,7 @@ Please note: this software is still under fairly active development. You are fre
 			<td><a href="https://getcomposer.org/download/">getcomposer.org</a></td>
 		</tr>
 		<tr>
-			<td>Node.js 4.x</td>
+			<td>Node.js 5.x</td>
 			<td><code>node -v</code></td>
 			<td><a href="http://nodejs.org/">nodejs.org</a></td>
 		</tr>
@@ -46,7 +46,7 @@ Please note: this software is still under fairly active development. You are fre
 			<td><code>npm install -g grunt-cli</td>
 		</tr>
 		<tr>
-			<td>Bower 1.5.x</td>
+			<td>Bower 1.7.x</td>
 			<td><code>bower -v</code></td>
 			<td><code>npm install -g bower</code></td>
 		</tr>
