@@ -17,10 +17,11 @@
 --------------------------------------------- */
 
 .title-area {
+	@include full();
+
 	display: inline-block;
 	float: none;
 	margin-right: 0;
-	width: auto;
 
 	@include min-screen($medium-screen) {
 		@include span(3 of 12);
@@ -69,7 +70,7 @@
 	.site-title > a {
 		@include full();
 
-		background: url(images/logo.png) no-repeat scroll left center transparent;
+		background: url(images/logo.png) no-repeat scroll center center transparent;
 		min-height: 69px;
 
 		@include hdpi(2) {
@@ -83,9 +84,14 @@
 --------------------------------------------- */
 
 .header-widget-area {
-	@include span(9 of 12);
-	@include last();
-	text-align: right;
+	text-align: center;
+
+	@include min-screen($medium-screen) {
+		@include span(9 of 12);
+		@include last();
+
+		text-align: right;
+	}
 
 	.widget {
 		margin: 0;
