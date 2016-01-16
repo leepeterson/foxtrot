@@ -64,5 +64,9 @@
 
 	.widget {
 		margin: 0;
+
+		li li {
+			margin-left: 0;
+		}
 	}
 }
