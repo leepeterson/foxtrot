@@ -55,16 +55,16 @@ div.gform_wrapper {
 
 .enews-widget,
 .enews-widget .widget-title {
-	color: #fff;
+	color: $base-background-color;
 }
 
 .sidebar .widget.enews-widget {
-	background-color: #333;
+	background-color: $base-font-color;
 }
 
 .enews-widget input,
 .enews-widget input:focus {
-	border: 1px solid #333;
+	border: 1px solid $base-font-color;
 }
 
 .enews-widget input {
@@ -72,16 +72,16 @@ div.gform_wrapper {
 }
 
 .enews-widget input[type="submit"] {
-	background-color: #c3251d;
-	color: #fff;
+	background-color: $cta-button-background-color;
+	color: $cta-button-font-color;
 	margin: 0;
 	width: 100%;
 }
 
 .enews-widget input:hover[type="submit"],
 .enews-widget input:focus[type="submit"]  {
-	background-color: #fff;
-	color: #333;
+	background-color: $cta-button-background-color-hover;
+	color: $cta-button-font-color;
 }
 
 .enews form + p {
