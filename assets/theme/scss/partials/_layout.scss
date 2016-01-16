@@ -59,17 +59,28 @@
 		@include span(8 of 12);
 	}
 
+	.content-sidebar-sidebar .content,
+	.sidebar-content-sidebar .content,
+	.sidebar-sidebar-content .content {
+		@include span(6 of 12);
+	}
+
+	.full-width-content .content {
+		@include full();
+	}
+
 	.sidebar-content .content {
 		@include last();
 	}
 
 	/* Primary Sidebar
 	-------------------- */
-	.sidebar {
+	.sidebar-primary {
 		@include span(4 of 12);
 	}
 
-	.content-sidebar .sidebar {
+	.content-sidebar .sidebar-primary,
+	.sidebar-content-sidebar .sidebar-primary {
 		@include last();
 	}
 
