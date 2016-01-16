@@ -252,9 +252,20 @@ img.alignnone,
 
 /* Screen Readers
 --------------------------------------------- */
+.genesis-skip-link {
+	margin: 0;
+
+	li {
+		height: 0;
+		width: 0;
+		list-style: none;
+	}
+}
 
 .off-screen,
-.screen-reader-text {
+.screen-reader-text,
+.screen-reader-text span,
+.screen-reader-shortcut {
 	border: 0;
 	clip: rect(0 0 0 0);
 	height: 1px;
