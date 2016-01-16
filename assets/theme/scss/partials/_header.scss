@@ -22,9 +22,12 @@
 	display: inline-block;
 	float: none;
 	margin-right: 0;
+	text-align: center;
 
 	@include min-screen($medium-screen) {
 		@include span(3 of 12);
+
+		text-align: left;
 	}
 }
 
