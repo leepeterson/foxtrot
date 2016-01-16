@@ -27,6 +27,10 @@
 	}
 }
 
+.header-full-width .title-area {
+	@include full();
+}
+
 .site-title {
 	font-family: $header-font-family;
 	font-size: $site-title-font-size;
@@ -52,6 +56,27 @@
 .site-description,
 .site-title {
 	margin-bottom: 0;
+}
+
+.header-image {
+
+	.site-description,
+	.site-title {
+		display: block;
+		text-indent: -9999px;
+	}
+
+	.site-title > a {
+		@include full();
+
+		background: url(images/logo.png) no-repeat scroll left center transparent;
+		min-height: 69px;
+
+		@include hdpi(2) {
+			background-image: url(images/logo@2x.png);
+			background-size: 215px 69px;
+		}
+	}
 }
 
 /* Header Right
