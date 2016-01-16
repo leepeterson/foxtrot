@@ -54,12 +54,12 @@
 		@include pad(15%);
 	}
 
-	.layout-2c-l .content,
-	.layout-2c-r .content {
+	.content-sidebar .content,
+	.sidebar-content .content {
 		@include span(8 of 12);
 	}
 
-	.layout-2c-l .content {
+	.sidebar-content .content {
 		@include last();
 	}
 
@@ -69,7 +69,7 @@
 		@include span(4 of 12);
 	}
 
-	.layout-2c-r .sidebar {
+	.content-sidebar .sidebar {
 		@include last();
 	}
 
@@ -84,8 +84,7 @@
 	}
 }
 
-.layout-1c .sidebar,
-.layout-1c-narrow .sidebar {
+.full-width-content .sidebar {
 	display: none;
 }
 
