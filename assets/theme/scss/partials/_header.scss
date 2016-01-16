@@ -16,7 +16,7 @@
 /* Title Area
 --------------------------------------------- */
 
-.site-branding {
+.title-area {
 	display: inline-block;
 	float: none;
 	margin-right: 0;
@@ -57,7 +57,7 @@
 /* Header Right
 --------------------------------------------- */
 
-.header-right {
+.header-widget-area {
 	@include span(9 of 12);
 	@include last();
 	text-align: right;

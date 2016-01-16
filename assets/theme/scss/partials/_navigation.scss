@@ -102,7 +102,7 @@
 /* Primary Navigation
 --------------------------------------------- */
 
-.site-header .menu-primary {
+.site-header .nav-header {
 	@include min-screen($medium-screen) {
 		@include span(9 of 12);
 		@include last();
