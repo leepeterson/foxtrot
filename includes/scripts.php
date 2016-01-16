@@ -91,7 +91,7 @@ function foxtrot_enqueue_styles() {
  * @return void
  */
 function foxtrot_enqueue_scripts() {
-	$js_uri  = trailingslashit( get_template_directory_uri() ) . 'js/';
+	$js_uri  = trailingslashit( get_stylesheet_directory_uri() ) . 'js/';
 	$suffix  = foxtrot_get_suffix();
 
 	wp_enqueue_script(
