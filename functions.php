@@ -23,7 +23,7 @@ define( 'CHILD_THEME_NAME', 'Foxtrot' );
  *
  * @since 0.1.0
  */
-define( 'CHILD_THEME_URL', 'http://www.wpsitecare.com/genesis-sample-theme' );
+define( 'CHILD_THEME_URL', 'http://demos.wpsitecare.com/foxtrot/' );
 
 /**
  * The current version of the child theme. Should match the version in style.css.
