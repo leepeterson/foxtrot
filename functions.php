@@ -44,6 +44,7 @@ define( 'FOXTROT_DIR',  trailingslashit( get_stylesheet_directory() ) );
 require_once FOXTROT_DIR . 'includes/theme-setup.php';
 require_once FOXTROT_DIR . 'includes/plugins.php';
 require_once FOXTROT_DIR . 'includes/scripts.php';
+require_once FOXTROT_DIR . 'includes/template-entry.php';
 require_once FOXTROT_DIR . 'includes/template-pages.php';
 require_once FOXTROT_DIR . 'includes/actions.php';
 require_once FOXTROT_DIR . 'includes/filters.php';

@@ -66,3 +66,10 @@ add_action( 'wp_enqueue_scripts', 'foxtrot_enqueue_scripts', 10 );
  * @see foxtrot_rtl_add_data
  */
 add_action( 'wp_enqueue_scripts', 'foxtrot_rtl_add_data', 12 );
+
+/**
+ * Callback defined in includes/template-entry.php
+ *
+ * @see foxtrot_sticky_banner
+ */
+add_action( 'genesis_entry_header', 'foxtrot_sticky_banner', 4 );
