@@ -1,4 +1,4 @@
-.nav-menu {
+.genesis-nav-menu {
 	clear: both;
 	font-size: 0.001px;
 	line-height: 1;
@@ -123,7 +123,7 @@
 	}
 }
 
-.menu-primary {
+.nav-primary {
 	display: none;
 
 	@include min-screen($medium-screen) {
@@ -150,7 +150,7 @@
 /* Secondary Navigation
 --------------------------------------------- */
 
-.menu-secondary {
+.nav-secondary {
 	background-color: $menu-secondary-background-color;
 	border-bottom: 1px solid $menu-secondary-border-color;
 	display: none;
