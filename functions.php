@@ -6,7 +6,7 @@
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
- * @since      1.0.0
+ * @since      0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -69,7 +69,7 @@ function foxtrot_includes() {
  * This is meant for plugins to execute code after the child theme setup has
  * been completed.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  */
 do_action( 'sitecare_after_setup_child' );

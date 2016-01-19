@@ -6,7 +6,7 @@
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
- * @since      1.0.0
+ * @since      0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Output the markup for the primary menu toggle button.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */

@@ -6,7 +6,7 @@
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
- * @since      1.0.0
+ * @since      0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Set the content width and allow it to be filtered directly.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -25,7 +25,7 @@ function foxtrot_content_width() {
 /**
  * Set up theme defaults and add support for WordPress and CareLib features.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -48,7 +48,7 @@ function foxtrot_setup() {
 /**
  * Register custom image sizes for the theme.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -62,7 +62,7 @@ function foxtrot_register_image_sizes() {
  * Add custom styles to the WordPress editor to give a better representation of
  * what the front of the site will look like.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -81,7 +81,7 @@ function foxtrot_add_editor_styles() {
 /**
  * Register our theme's custom layout options.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -95,7 +95,7 @@ function foxtrot_register_layouts() {
 /**
  * Remove the sidebars from our theme's custom layout if necessary.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -109,7 +109,7 @@ function foxtrot_site_layouts() {
 /**
  * Unregister unnecessary sidebars in Genesis core.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
