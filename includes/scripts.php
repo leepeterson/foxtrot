@@ -43,7 +43,7 @@ function foxtrot_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 	// Change the stylesheet name to 'style.min.css'.
 	$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
 
-	if ( file_exists( FOXTROT_DIR . $stylesheet ) ) {
+	if ( file_exists( CHILD_THEME_DIR . $stylesheet ) ) {
 		$stylesheet_uri = esc_url( trailingslashit( $stylesheet_dir_uri ) . $stylesheet );
 	}
 
