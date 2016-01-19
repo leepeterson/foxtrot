@@ -35,6 +35,7 @@ function foxtrot_setup() {
 	add_theme_support( 'html5' );
 
 	add_theme_support( 'genesis-accessibility', array(
+		'drop-down-menu',
 		'headings',
 		'search-form',
 		'skip-links',
