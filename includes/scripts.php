@@ -26,7 +26,7 @@ function foxtrot_get_suffix() {
  * Filter the 'stylesheet_uri' to load a minified version of 'style.css'
  * file if it is available.
  *
- * @since  0.2.0
+ * @since  0.1.0
  * @access public
  * @param  string $stylesheet_uri The URI of the active theme's stylesheet.
  * @param  string $stylesheet_dir_uri The directory URI of the active theme's stylesheet.
