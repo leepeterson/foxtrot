@@ -91,3 +91,14 @@ function foxtrot_register_layouts() {
 		'img'   => trailingslashit( get_stylesheet_directory_uri() ) . 'images/full-width-slim.svg',
 	) );
 }
+
+/**
+ * Unregister unnecessary sidebars in Genesis core.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function foxtrot_unregister_sidebars() {
+	unregister_sidebar( 'header-right' );
+}
