@@ -38,7 +38,13 @@
 
 .entry-pagination {
 	display: block;
+	clear: both;
+	font-size: $pagination-font-size;
+	letter-spacing: 1px;
 	margin: $base-margin 0;
+	overflow: hidden;
+	padding: 0;
+	text-transform: uppercase;
 
 	span,
 	a {
@@ -65,61 +71,10 @@
 	}
 }
 
-
-/* Page Links
---------------------------------------------- */
-.nav-next a {
-
-	@include min-screen($medium-screen) {
-		float: right;
-	}
-}
-
-.nav-previous a {
-
-	@include min-screen($medium-screen) {
-		float: left;
-	}
-}
-
-.nav-next a,
-.nav-previous a {
-	background: $nav-single-background-color;
-	border-radius: $base-border-radius;
-	border: 1px solid $nav-single-border-color;
-	color: $nav-single-link-color;
-	display: block;
-	margin: 0 0 10px;
-	padding: 16px 20px 14px;
-	text-align: center;
-}
-
-.nav-next a:hover,
-.nav-previous a:hover,
-.nav-next a:focus,
-.nav-previous a:focus {
-	background: $nav-single-background-color-hover;
-	color: $nav-single-link-color;
-}
-
 /* Archive Page Links
 --------------------------------------------- */
 
-.nav-archive {
-	display: block;
-	clear: both;
-	font-size: $pagination-font-size;
-	letter-spacing: 1px;
-	margin-bottom: 20px;
-	overflow: hidden;
-	padding: 0;
-	text-transform: uppercase;
-}
-
-/* Single Entry Page Links
---------------------------------------------- */
-
-.nav-single {
+.archive-pagination {
 	display: block;
 	clear: both;
 	font-size: $pagination-font-size;
