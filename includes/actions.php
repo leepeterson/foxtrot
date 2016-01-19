@@ -68,6 +68,13 @@ add_action( 'wp_enqueue_scripts', 'foxtrot_enqueue_scripts', 10 );
 add_action( 'wp_enqueue_scripts', 'foxtrot_rtl_add_data', 12 );
 
 /**
+ * Callback defined in includes/template-global.php
+ *
+ * @see foxtrot_menu_toggle
+ */
+add_action( 'genesis_header_right', 'foxtrot_menu_toggle', 4 );
+
+/**
  * Callback defined in includes/template-entry.php
  *
  * @see foxtrot_sticky_banner
