@@ -93,6 +93,20 @@ function foxtrot_register_layouts() {
 }
 
 /**
+ * Remove the sidebars from our theme's custom layout if necessary.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function foxtrot_site_layouts() {
+	if ( 'full-width-slim' === genesis_site_layout() ) {
+		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+	}
+}
+
+/**
  * Unregister unnecessary sidebars in Genesis core.
  *
  * @since  1.0.0

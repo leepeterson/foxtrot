@@ -34,11 +34,11 @@ div.gform_wrapper {
 /* WordPress SEO
 --------------------------------------------- */
 
-.breadcrumbs {
+.breadcrumb {
 	font-size: $base-font-size;
 	margin-bottom: 15px;
 
-	.sep {
+	span:not(.breadcrumb-link-wrap) {
 		padding: 0 4px;
 	}
 }
@@ -79,7 +79,7 @@ div.gform_wrapper {
 }
 
 .enews-widget input:hover[type="submit"],
-.enews-widget input:focus[type="submit"]  {
+.enews-widget input:focus[type="submit"] {
 	background-color: $cta-button-background-color-hover;
 	color: $cta-button-font-color;
 }
