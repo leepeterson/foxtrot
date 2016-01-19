@@ -41,14 +41,27 @@ define( 'CHILD_THEME_VERSION', '0.1.0' );
  */
 define( 'FOXTROT_DIR',  trailingslashit( get_stylesheet_directory() ) );
 
-require_once FOXTROT_DIR . 'includes/theme-setup.php';
-require_once FOXTROT_DIR . 'includes/plugins.php';
-require_once FOXTROT_DIR . 'includes/scripts.php';
-require_once FOXTROT_DIR . 'includes/template-entry.php';
-require_once FOXTROT_DIR . 'includes/template-global.php';
-require_once FOXTROT_DIR . 'includes/template-pages.php';
-require_once FOXTROT_DIR . 'includes/actions.php';
-require_once FOXTROT_DIR . 'includes/filters.php';
+add_action( 'genesis_setup', 'foxtrot_includes', 15 );
+/**
+ * Include all required theme files within a hookable function.
+ *
+ * This is necessary to avoid including Genesis' init function and must be
+ * hooked into `genesis_setup` to ensure access to all of Genesis core.
+ *
+ * @since 0.1.0
+ * @access public
+ * @return void
+ */
+function foxtrot_includes() {
+	require_once FOXTROT_DIR . 'includes/theme-setup.php';
+	require_once FOXTROT_DIR . 'includes/plugins.php';
+	require_once FOXTROT_DIR . 'includes/scripts.php';
+	require_once FOXTROT_DIR . 'includes/template-entry.php';
+	require_once FOXTROT_DIR . 'includes/template-global.php';
+	require_once FOXTROT_DIR . 'includes/template-pages.php';
+	require_once FOXTROT_DIR . 'includes/actions.php';
+	require_once FOXTROT_DIR . 'includes/filters.php';
+}
 
 /**
  * A hook within the global scope; common to all WP Site Care themes.

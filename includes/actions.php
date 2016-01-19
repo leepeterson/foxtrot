@@ -23,14 +23,14 @@ add_action( 'after_setup_theme', 'foxtrot_content_width', 0 );
  *
  * @see foxtrot_setup
  */
-add_action( 'genesis_setup', 'foxtrot_setup', 10 );
+add_action( 'genesis_setup', 'foxtrot_setup', 20 );
 
 /**
  * Callback defined in includes/theme-setup.php
  *
  * @see foxtrot_unregister_sidebars
  */
-add_action( 'genesis_setup', 'foxtrot_unregister_sidebars', 15 );
+add_action( 'genesis_setup', 'foxtrot_unregister_sidebars', 20 );
 
 /**
  * Callback defined in includes/theme-setup.php
