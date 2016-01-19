@@ -61,7 +61,6 @@
 
 	.children {
 		@include min-screen($small-screen) {
-
 			border-left: 1px dashed $comment-border-color;
 			padding-left: 30px;
 
@@ -76,7 +75,6 @@
 	}
 
 	.comment {
-
 		margin-top: 20px;
 		padding-bottom: 0;
 
