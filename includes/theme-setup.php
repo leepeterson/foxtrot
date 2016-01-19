@@ -93,7 +93,7 @@ function foxtrot_register_layouts() {
 }
 
 /**
- * Register our theme's custom layout options.
+ * Remove the sidebars from our theme's custom layout if necessary.
  *
  * @since  1.0.0
  * @access public
