@@ -24,3 +24,12 @@ add_filter( 'rp4wp_thumbnail_size', 'foxtrot_related_posts_image' );
  * @see foxtrot_min_stylesheet_uri
  */
 add_filter( 'stylesheet_uri', 'foxtrot_min_stylesheet_uri', 5, 2 );
+
+/**
+ * Prevent Genesis from loading deprecated files.
+ *
+ * Callback defined in WordPress Core.
+ *
+ * @see genesis_load_deprecated
+ */
+add_filter( 'genesis_load_deprecated', '__return_false' );
