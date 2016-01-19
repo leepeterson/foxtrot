@@ -38,7 +38,7 @@ div.gform_wrapper {
 	font-size: $base-font-size;
 	margin-bottom: 15px;
 
-	.sep {
+	span:not(.breadcrumb-link-wrap) {
 		padding: 0 4px;
 	}
 }
