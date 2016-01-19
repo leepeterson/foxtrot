@@ -1,6 +1,5 @@
 .comment {
 	position: relative;
-	padding-left: 30px;
 
 	@include min-screen($small-screen) {
 		padding-left: 24px;
@@ -20,7 +19,7 @@
 		clear: both;
 		font-size: $base-font-size;
 		min-height: 75px;
-		padding: 5px;
+		padding: 10px;
 		position: relative;
 
 		@include min-screen($small-screen) {
@@ -48,21 +47,36 @@
 	}
 
 	.avatar {
-		border: 4px solid $comment-background-color;
-		border-radius: 100%;
-		position: absolute;
-		left: -24px;
-		top: 15px;
 		width: 30px;
 
 		@include min-screen($small-screen) {
+			border: 4px solid $comment-background-color;
+			border-radius: 100%;
+			left: -24px;
+			top: 15px;
+			position: absolute;
 			width: 48px;
 		}
 	}
 
+	.children {
+		@include min-screen($small-screen) {
+
+			border-left: 1px dashed $comment-border-color;
+			padding-left: 30px;
+
+			header {
+				padding-left: 10px;
+			}
+
+			.avatar {
+				left: -50px;
+			}
+		}
+	}
+
 	.comment {
-		border: 0;
-		margin-left: -40px;
+
 		margin-top: 20px;
 		padding-bottom: 0;
 
