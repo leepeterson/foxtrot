@@ -44,13 +44,13 @@
 /* Content
 -------------------- */
 
-.layout-1c-narrow .content {
+.full-width-slim .content {
 	padding: 0;
 }
 
 @include min-screen($medium-screen) {
 
-	.layout-1c-narrow .content {
+	.full-width-slim .content {
 		@include pad(15%);
 	}
 
@@ -71,6 +71,15 @@
 
 	.sidebar-content .content {
 		@include last();
+	}
+
+	.content-sidebar-sidebar .content-sidebar-wrap {
+		float: left;
+	}
+
+	.sidebar-content-sidebar .content-sidebar-wrap,
+	.sidebar-sidebar-content .content-sidebar-wrap {
+		float: right;
 	}
 
 	/* Primary Sidebar

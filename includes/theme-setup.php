@@ -91,3 +91,20 @@ function foxtrot_register_layouts() {
 		'img'   => trailingslashit( get_stylesheet_directory_uri() ) . 'images/full-width-slim.svg',
 	) );
 }
+
+/**
+ * Register our theme's custom layout options.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return void
+ */
+function foxtrot_site_layouts() {
+
+	$foxtrot_layout = genesis_site_layout();
+
+	if ( 'full-width-slim' === $foxtrot_layout ) {
+		remove_action( 'genesis_after_content', 'genesis_get_sidebar' );
+		remove_action( 'genesis_after_content_sidebar_wrap', 'genesis_get_sidebar_alt' );
+	}
+}
