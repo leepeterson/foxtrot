@@ -101,9 +101,6 @@ function foxtrot_enqueue_scripts() {
 		CHILD_THEME_VERSION,
 		true
 	);
-
-	wp_dequeue_script( 'superfish' );
-	wp_dequeue_script( 'superfish-args' );
 }
 
 /**

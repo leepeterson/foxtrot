@@ -58,7 +58,7 @@ add_action( 'wp_enqueue_scripts', 'foxtrot_enqueue_styles', 10 );
  *
  * @see foxtrot_enqueue_scripts
  */
-add_action( 'wp_enqueue_scripts', 'foxtrot_enqueue_scripts', 15 );
+add_action( 'wp_enqueue_scripts', 'foxtrot_enqueue_scripts', 10 );
 
 /**
  * Callback defined in includes/scripts.php
