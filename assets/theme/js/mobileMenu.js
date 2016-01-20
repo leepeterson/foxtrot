@@ -15,6 +15,7 @@
 			menuButton: '#menu-toggle',
 			extraMenus: '#genesis-nav-secondary'
 		},
+		$body = $( 'body' ),
 		$menuButton, $mainMenu, $extraMenu, $mobileMenu, menuClass;
 
 		if ( options ) {
@@ -70,7 +71,7 @@
 		 * @return {Boolean} Returns true if the menu is open.
 		 */
 		function menuIsOpen() {
-			if ( $( 'body' ).hasClass( 'menu-open' ) ) {
+			if ( $body.hasClass( 'menu-open' ) ) {
 				return true;
 			}
 			return false;
@@ -271,7 +272,7 @@
 				closeMenu();
 				$mobileMenu.addClass( menuClass );
 				$mobileMenu.removeClass( 'menu-mobile' );
-				$( 'body' ).removeClass( 'menu-open' );
+				$body.removeClass( 'menu-open' );
 			} else {
 				$mobileMenu.removeClass( menuClass );
 				$mobileMenu.addClass( 'menu-mobile' );
@@ -292,7 +293,7 @@
 			event.preventDefault();
 			openMenu();
 			closeMenu();
-			$( 'body' ).toggleClass( 'menu-open' );
+			$body.toggleClass( 'menu-open' );
 		}
 
 		/**
