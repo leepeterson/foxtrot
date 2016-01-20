@@ -13,7 +13,8 @@
 	$.fn.foxtrotMobileMenu = function( options ) {
 		var settings = {
 				menuButton: '#menu-toggle',
-				extraMenus: '#genesis-nav-secondary'
+				extraMenus: '#genesis-nav-secondary',
+				menuContainer: '.genesis-nav-menu'
 			},
 			$body = $( 'body' ),
 			$menuButton, $mainMenu, $extraMenu, $mobileMenu, menuClass;
@@ -103,10 +104,8 @@
 				return;
 			}
 
-			var menuContainer = '.genesis-nav-menu';
-
 			if ( ! menusMerged() && ! menuIsOpen() ) {
-				$extraMenu.find( menuContainer ).appendTo( $mainMenu.find( menuContainer ) );
+				$extraMenu.find( settings.menuContainer ).appendTo( $mainMenu.find( settings.menuContainer ) );
 			}
 		}
 
