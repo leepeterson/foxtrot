@@ -32,7 +32,11 @@ function foxtrot_content_width() {
 function foxtrot_setup() {
 	add_theme_support( 'genesis-responsive-viewport' );
 
-	add_theme_support( 'html5' );
+	add_theme_support( 'html5', array(
+		'search-form',
+		'comment-form',
+		'comment-list',
+	) );
 
 	add_theme_support( 'genesis-accessibility', array(
 		'headings',
