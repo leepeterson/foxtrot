@@ -12,11 +12,11 @@
 
 	$.fn.foxtrotMobileMenu = function( options ) {
 		var settings = {
-			menuButton: '#menu-toggle',
-			extraMenus: '#genesis-nav-secondary'
-		},
-		$body = $( 'body' ),
-		$menuButton, $mainMenu, $extraMenu, $mobileMenu, menuClass;
+				menuButton: '#menu-toggle',
+				extraMenus: '#genesis-nav-secondary'
+			},
+			$body = $( 'body' ),
+			$menuButton, $mainMenu, $extraMenu, $mobileMenu, menuClass;
 
 		if ( options ) {
 			$.extend( settings, options );
