@@ -10,39 +10,19 @@
 (function( $, undefined ) {
 	'use strict';
 
-	var $$,
-		cache = {};
-
-	$$ = function( selector ) {
-		var temp = cache[selector];
-		if ( undefined !== temp ) {
-			return temp;
-		}
-		return cache[selector] = $( selector );
-	};
-
-	$$.clear = function( selector ) {
-		cache[selector] = undefined;
-	};
-
-	$$.fresh = function( selector ) {
-		cache[selector] = undefined;
-		return $$( selector );
-	};
-
 	$.fn.foxtrotMobileMenu = function() {
-		var $menuButton = $$( '#menu-toggle' ),
-			$mobileMenu = $$( '#genesis-nav-primary' ),
+		var $menuButton = $( '#menu-toggle' ),
+			$mobileMenu = $( '#genesis-nav-primary' ),
 			menuClass   = 'nav-primary';
 
 		// Return early if we don't have any menus to work with.
-		if ( 0 === $$( '#genesis-nav-primary' ).length && 0 === $$( '#genesis-nav-secondary' ).length ) {
+		if ( 0 === $( '#genesis-nav-primary' ).length && 0 === $( '#genesis-nav-secondary' ).length ) {
 			return;
 		}
 
 		// Use the secondary menu as the mobile menu if we don't have a primary.
-		if ( 0 === $$( '#genesis-nav-primary' ).length ) {
-			$mobileMenu = $$( '#genesis-nav-secondary' );
+		if ( 0 === $( '#genesis-nav-primary' ).length ) {
+			$mobileMenu = $( '#genesis-nav-secondary' );
 			menuClass   = 'nav-secondary';
 		}
 
@@ -78,7 +58,7 @@
 		 * @return {Boolean} Returns true if the menu is open.
 		 */
 		function menuIsOpen() {
-			if ( $$( 'body' ).hasClass( 'menu-open' ) ) {
+			if ( $( 'body' ).hasClass( 'menu-open' ) ) {
 				return true;
 			}
 			return false;
@@ -92,7 +72,7 @@
 		 * @return {Boolean} Returns true if the menus have been merged.
 		 */
 		function menusMerged() {
-			if ( 0 === $$.fresh( '#genesis-nav-primary #menu-secondary-navigation' ).length ) {
+			if ( 0 === $( '#genesis-nav-primary #menu-secondary-navigation' ).length ) {
 				return false;
 			}
 			return true;
@@ -106,11 +86,11 @@
 		 * @return void
 		 */
 		function mergeMenus() {
-			if ( 0 === $$( '#genesis-nav-primary' ).length || 0 === $$( '#genesis-nav-secondary' ).length ) {
+			if ( 0 === $( '#genesis-nav-primary' ).length || 0 === $( '#genesis-nav-secondary' ).length ) {
 				return;
 			}
 			if ( ! menusMerged() && ! menuIsOpen() ) {
-				$$( '#genesis-nav-secondary .genesis-nav-menu' ).appendTo( '#genesis-nav-primary .genesis-nav-menu' );
+				$( '#genesis-nav-secondary .genesis-nav-menu' ).appendTo( '#genesis-nav-primary .genesis-nav-menu' );
 			}
 		}
 
@@ -122,10 +102,10 @@
 		 * @return void
 		 */
 		function splitMenus() {
-			if ( 0 === $$( '#genesis-nav-secondary' ).length || 0 === $$( '#genesis-nav-primary #menu-secondary-navigation' ).length ) {
+			if ( 0 === $( '#genesis-nav-secondary' ).length || 0 === $( '#genesis-nav-primary #menu-secondary-navigation' ).length ) {
 				return;
 			}
-			$$( '#genesis-nav-primary #menu-secondary-navigation' ).appendTo( '#genesis-nav-secondary .wrap' );
+			$( '#genesis-nav-primary #menu-secondary-navigation' ).appendTo( '#genesis-nav-secondary .wrap' );
 		}
 
 		/**
@@ -190,7 +170,7 @@
 		function focusMobileMenu() {
 			var nav        = $mobileMenu[0],
 				navID      = $mobileMenu.attr( 'id' ),
-				$items     = $$( '#' + navID + ' a' ),
+				$items     = $( '#' + navID + ' a' ),
 				$firstItem = $items.first(),
 				$lastItem  = $items.last();
 
@@ -273,7 +253,7 @@
 				closeMenu();
 				$mobileMenu.addClass( menuClass );
 				$mobileMenu.removeClass( 'menu-mobile' );
-				$$( 'body' ).removeClass( 'menu-open' );
+				$( 'body' ).removeClass( 'menu-open' );
 			} else {
 				$mobileMenu.removeClass( menuClass );
 				$mobileMenu.addClass( 'menu-mobile' );
@@ -294,7 +274,7 @@
 			event.preventDefault();
 			openMenu();
 			closeMenu();
-			$$( 'body' ).toggleClass( 'menu-open' );
+			$( 'body' ).toggleClass( 'menu-open' );
 		}
 
 		/**
