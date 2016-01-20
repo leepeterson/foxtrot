@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 function foxtrot_menu_toggle() {
 	if ( has_nav_menu( 'primary' ) || has_nav_menu( 'secondary' ) ) {
 		printf( '<button %s>%s</button>',
-			genesis_attr( 'menu-toggle', 'primary' ),
+			genesis_attr( 'menu-toggle' ),
 			esc_html( apply_filters( 'foxtrot_menu_toggle_text', '' ) )
 		);
 	}

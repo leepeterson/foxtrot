@@ -21,7 +21,7 @@ defined( 'ABSPATH' ) || exit;
 function foxtrot_sticky_banner() {
 	if ( ! is_singular() && is_sticky() ) {
 		printf( '<div %s><p class="ribbon-content">%s<p></div>',
-			genesis_attr( 'corner-ribbon', 'sticky' ),
+			genesis_attr( 'corner-ribbon' ),
 			esc_html__( 'Featured', 'foxtrot' )
 		);
 	}
