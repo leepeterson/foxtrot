@@ -118,7 +118,7 @@
 		 * @return void
 		 */
 		function splitMenus() {
-			var $appendedMenu = $mainMenu.find( '#menu-secondary-navigation' );
+			var $appendedMenu = $mainMenu.find( 'ul > ul' );
 
 			if ( 0 === $extraMenu.length || 0 === $appendedMenu.length ) {
 				return;
