@@ -1,8 +1,8 @@
 <?php
 /**
- * A collection of all the default actions added within the theme.
+ * HTML attribute functions, mostly used for filtering attributes.
  *
- * @package    Foxtrot\Actions
+ * @package    Foxtrot\Fucntions
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
