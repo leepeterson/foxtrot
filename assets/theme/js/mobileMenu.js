@@ -85,7 +85,7 @@
 		 * @return {Boolean} Returns true if the menus have been merged.
 		 */
 		function menusMerged() {
-			if ( 0 === $mainMenu.find( '#menu-secondary-navigation' ).length ) {
+			if ( 0 === $mainMenu.find( 'ul > ul' ).length ) {
 				return false;
 			}
 			return true;
