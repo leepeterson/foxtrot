@@ -64,6 +64,21 @@ function foxtrot_includes() {
 	require_once CHILD_THEME_DIR . 'includes/filters.php';
 }
 
+add_action( 'genesis_setup', 'foxtrot_admin_includes', 15 );
+/**
+ * Include all required admin theme files within a hookable function.
+ *
+ * @since 0.1.0
+ * @access public
+ * @return void
+ */
+function foxtrot_admin_includes() {
+	if ( is_admin() ) {
+		require_once CHILD_THEME_DIR . 'admin/meta-boxes.php';
+		require_once CHILD_THEME_DIR . 'admin/actions.php';
+	}
+}
+
 /**
  * A hook within the global scope; common to all WP Site Care themes.
  *

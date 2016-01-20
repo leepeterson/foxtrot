@@ -116,3 +116,18 @@ function foxtrot_site_layouts() {
 function foxtrot_unregister_sidebars() {
 	unregister_sidebar( 'header-right' );
 }
+
+/**
+ * Unset legacy templates from Genesis core.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  array $templates The current list of templates.
+ * @return array $templates The modified list of templates.
+ */
+function foxtrot_disable_old_templates( $templates ) {
+	unset( $templates['page_blog.php'] );
+	unset( $templates['page_archive.php'] );
+
+	return $templates;
+}

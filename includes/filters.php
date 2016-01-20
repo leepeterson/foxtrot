@@ -28,6 +28,13 @@ add_filter( 'rp4wp_thumbnail_size', 'foxtrot_related_posts_image' );
 add_filter( 'genesis_load_deprecated', '__return_false' );
 
 /**
+ * Callback defined in includes/theme-setup.php
+ *
+ * @see foxtrot_disable_old_templates
+ */
+add_filter( 'theme_page_templates', 'foxtrot_disable_old_templates' );
+
+/**
  * Callback defined in includes/scripts.php
  *
  * @see foxtrot_min_stylesheet_uri
@@ -47,3 +54,12 @@ add_filter( 'genesis_attr_menu-toggle', 'foxtrot_attr_menu_toggle', 5 );
  * @see foxtrot_attr_menu_secondary
  */
 add_filter( 'genesis_attr_nav-secondary', 'foxtrot_attr_menu_secondary' );
+
+/**
+ * Prevent Genesis from adding an edit link when users are logged-in.
+ *
+ * Callback defined in WordPress Core.
+ *
+ * @see genesis_edit_post_link
+ */
+add_filter( 'genesis_edit_post_link' , '__return_false' );
