@@ -28,7 +28,6 @@ window.foxtrot = window.foxtrot || {};
 
 	// Document ready.
 	jQuery(function() {
-		skipLinkFocus.init();
 		foxtrot.globalInit();
 	});
 })( this, jQuery );
