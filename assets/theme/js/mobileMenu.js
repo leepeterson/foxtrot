@@ -31,18 +31,18 @@
 	};
 
 	$.fn.foxtrotMobileMenu = function() {
-		var $menuButton = $$( '#menu-toggle-primary' ),
-			$mobileMenu = $$( '#menu-primary' ),
+		var $menuButton = $$( '#menu-toggle' ),
+			$mobileMenu = $$( '#menu-primary-navigation' ),
 			menuClass   = 'menu-primary';
 
 		// Return early if we don't have any menus to work with.
-		if ( 0 === $$( '#menu-primary' ).length && 0 === $$( '#menu-secondary' ).length ) {
+		if ( 0 === $$( '#menu-primary-navigation' ).length && 0 === $$( '#genesis-nav-secondary' ).length ) {
 			return;
 		}
 
 		// Use the secondary menu as the mobile menu if we don't have a primary.
-		if ( 0 === $$( '#menu-primary' ).length ) {
-			$mobileMenu = $$( '#menu-secondary' );
+		if ( 0 === $$( '#menu-primary-navigation' ).length ) {
+			$mobileMenu = $$( '#genesis-nav-secondary' );
 			menuClass   = 'menu-secondary';
 		}
 
@@ -92,7 +92,7 @@
 		 * @return {Boolean} Returns true if the menus have been merged.
 		 */
 		function menusMerged() {
-			if ( 0 === $$.fresh( '#menu-primary #secondary' ).length ) {
+			if ( 0 === $$.fresh( '#menu-primary-navigation #menu-secondary-navigation' ).length ) {
 				return false;
 			}
 			return true;
@@ -106,11 +106,11 @@
 		 * @return void
 		 */
 		function mergeMenus() {
-			if ( 0 === $$( '#menu-primary' ).length || 0 === $$( '#menu-secondary' ).length ) {
+			if ( 0 === $$( '#menu-primary-navigation' ).length || 0 === $$( '#genesis-nav-secondary' ).length ) {
 				return;
 			}
 			if ( ! menusMerged() && ! menuIsOpen() ) {
-				$$( '#menu-secondary .nav-menu' ).appendTo( '#menu-primary .nav-menu' );
+				$$( '#genesis-nav-secondary .genesis-nav-menu' ).appendTo( '#menu-primary-navigation .genesis-nav-menu' );
 			}
 		}
 
@@ -122,10 +122,10 @@
 		 * @return void
 		 */
 		function splitMenus() {
-			if ( 0 === $$( '#menu-secondary' ).length || 0 === $$( '#menu-primary #secondary' ).length ) {
+			if ( 0 === $$( '#genesis-nav-secondary' ).length || 0 === $$( '#menu-primary-navigation #menu-secondary-navigation' ).length ) {
 				return;
 			}
-			$$( '#menu-primary #secondary' ).appendTo( '#menu-secondary .wrap' );
+			$$( '#menu-primary-navigation #menu-secondary-navigation' ).appendTo( '#genesis-nav-secondary .wrap' );
 		}
 
 		/**
