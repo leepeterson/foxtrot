@@ -57,6 +57,7 @@ function foxtrot_includes() {
 	require_once CHILD_THEME_DIR . 'includes/attributes.php';
 	require_once CHILD_THEME_DIR . 'includes/plugins.php';
 	require_once CHILD_THEME_DIR . 'includes/scripts.php';
+	require_once CHILD_THEME_DIR . 'includes/template-archive.php';
 	require_once CHILD_THEME_DIR . 'includes/template-entry.php';
 	require_once CHILD_THEME_DIR . 'includes/template-global.php';
 	require_once CHILD_THEME_DIR . 'includes/template-pages.php';
