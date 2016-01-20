@@ -17,11 +17,15 @@
 --------------------------------------------- */
 
 .title-area {
-	@include span(3 of 12);
+	@include span(6 of 12);
 	display: inline-block;
 	float: none;
 	margin-right: 0;
 	text-align: left;
+
+	@include min-screen($medium-screen) {
+		@include span(3 of 12);
+	}
 }
 
 .site-title {
@@ -76,9 +80,12 @@
 --------------------------------------------- */
 
 .header-widget-area {
-	@include span(9 of 12);
-	@include last();
+	@include span(last 6 of 12);
 	text-align: right;
+
+	@include min-screen($medium-screen) {
+		@include span(last 9 of 12);
+	}
 
 	.widget {
 		margin: 0;
