@@ -19,13 +19,6 @@ defined( 'ABSPATH' ) || exit;
 add_filter( 'rp4wp_thumbnail_size', 'foxtrot_related_posts_image' );
 
 /**
- * Callback defined in includes/scripts.php
- *
- * @see foxtrot_min_stylesheet_uri
- */
-add_filter( 'stylesheet_uri', 'foxtrot_min_stylesheet_uri', 5, 2 );
-
-/**
  * Prevent Genesis from loading deprecated files.
  *
  * Callback defined in WordPress Core.
@@ -33,3 +26,24 @@ add_filter( 'stylesheet_uri', 'foxtrot_min_stylesheet_uri', 5, 2 );
  * @see genesis_load_deprecated
  */
 add_filter( 'genesis_load_deprecated', '__return_false' );
+
+/**
+ * Callback defined in includes/scripts.php
+ *
+ * @see foxtrot_min_stylesheet_uri
+ */
+add_filter( 'stylesheet_uri', 'foxtrot_min_stylesheet_uri', 5, 2 );
+
+/**
+ * Callback defined in includes/attributes.php
+ *
+ * @see foxtrot_menu_toggle
+ */
+add_filter( 'genesis_attr_menu-toggle', 'foxtrot_attr_menu_toggle', 5 );
+
+/**
+ * Callback defined in includes/attributes.php
+ *
+ * @see foxtrot_attr_menu_secondary
+ */
+add_filter( 'genesis_attr_nav-secondary', 'foxtrot_attr_menu_secondary' );

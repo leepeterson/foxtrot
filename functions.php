@@ -54,6 +54,7 @@ add_action( 'genesis_setup', 'foxtrot_includes', 15 );
  */
 function foxtrot_includes() {
 	require_once CHILD_THEME_DIR . 'includes/theme-setup.php';
+	require_once CHILD_THEME_DIR . 'includes/attributes.php';
 	require_once CHILD_THEME_DIR . 'includes/plugins.php';
 	require_once CHILD_THEME_DIR . 'includes/scripts.php';
 	require_once CHILD_THEME_DIR . 'includes/template-entry.php';
