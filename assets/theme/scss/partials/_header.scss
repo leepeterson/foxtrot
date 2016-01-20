@@ -17,22 +17,11 @@
 --------------------------------------------- */
 
 .title-area {
-	@include full();
-
+	@include span(3 of 12);
 	display: inline-block;
 	float: none;
 	margin-right: 0;
-	text-align: center;
-
-	@include min-screen($medium-screen) {
-		@include span(3 of 12);
-
-		text-align: left;
-	}
-}
-
-.header-full-width .title-area {
-	@include full();
+	text-align: left;
 }
 
 .site-title {
@@ -87,14 +76,9 @@
 --------------------------------------------- */
 
 .header-widget-area {
-	text-align: center;
-
-	@include min-screen($medium-screen) {
-		@include span(9 of 12);
-		@include last();
-
-		text-align: right;
-	}
+	@include span(9 of 12);
+	@include last();
+	text-align: right;
 
 	.widget {
 		margin: 0;
@@ -102,5 +86,15 @@
 		li li {
 			margin-left: 0;
 		}
+	}
+}
+
+/* Full-Width Header
+--------------------------------------------- */
+
+.header-full-width {
+	.header-widget-area,
+	.title-area {
+		@include full();
 	}
 }
