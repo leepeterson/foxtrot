@@ -26,7 +26,6 @@
 		$mainMenu   = $( this );
 		$extraMenu  = $( settings.extraMenus );
 		$mobileMenu = $mainMenu;
-		menuClass   = 'nav-primary';
 
 		// Return early if we don't have any menus to work with.
 		if ( 0 === $mainMenu.length && 0 === $extraMenu.length ) {
@@ -36,8 +35,9 @@
 		// Use the secondary menu as the mobile menu if we don't have a primary.
 		if ( 0 === $mainMenu.length ) {
 			$mobileMenu = $extraMenu;
-			menuClass   = 'nav-secondary';
 		}
+
+		menuClass = $mobileMenu.attr( 'class' );
 
 		/**
 		 * Debounce a window resize event.
