@@ -82,20 +82,6 @@ add_action( 'genesis_before', 'foxtrot_site_layouts', 10 );
 add_action( 'genesis_header_right', 'foxtrot_menu_toggle', 4 );
 
 /**
- * Callback defined in Genesis core.
- *
- * @see genesis_do_nav
- */
-add_action( 'genesis_header_right', 'genesis_do_nav', 10 );
-
-/**
- * Callback defined in Genesis core.
- *
- * @see genesis_do_nav
- */
-remove_action( 'genesis_after_header', 'genesis_do_nav' );
-
-/**
  * Callback defined in includes/template-entry.php
  *
  * @see foxtrot_sticky_banner
