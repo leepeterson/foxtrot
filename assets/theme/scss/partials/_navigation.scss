@@ -127,7 +127,25 @@
 	display: none;
 
 	@include min-screen($medium-screen) {
+		background: $menu-primary-background-color;
 		display: block;
+
+		.genesis-nav-menu {
+
+			> li > a {
+				color: $menu-primary-link-color;
+			}
+
+			li a:hover,
+			li a:focus,
+			.current-menu-item > a,
+			.current-menu-ancestor > a,
+			.current-menu-parent > a,
+			.sub-menu .current-menu-item > a:hover,
+			.sub-menu .current-menu-item > a:focus {
+				color: $menu-primary-link-color-hover;
+			}
+		}
 	}
 }
 

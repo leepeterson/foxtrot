@@ -73,10 +73,10 @@ $menu-header-border-color:        $base-border-color;
 $menu-header-color:               $light-gray;
 $menu-header-color-hover:         $base-link-color;
 
-$menu-primary-background-color:   $nav-background-color;
+$menu-primary-background-color:   $dark-gray;
 $menu-primary-border-color:       $base-border-color;
-$menu-primary-link-color:         lighten($nav-link-color, 10);
-$menu-primary-link-color-hover:   $base-link-color;
+$menu-primary-link-color:         $white;
+$menu-primary-link-color-hover:   $light-blue;
 
 $menu-secondary-background-color: $nav-background-color;
 $menu-secondary-border-color:     $base-border-color;
