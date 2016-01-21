@@ -2,6 +2,15 @@
 
 	.genesis-nav-menu {
 
-	}
+		li {
 
+			> a {
+				color: #fff;
+			}
+		}
+
+		.menu-item {
+			display: block;
+		}
+	}
 }
