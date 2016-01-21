@@ -185,7 +185,8 @@ body {
 	}
 }
 
-.menu-toggle {
+.menu-toggle,
+.sub-menu-toggle {
 	background: $menu-toggle-background-color;
 	border-radius: $base-border-radius;
 	color: $menu-toggle-link-color;
@@ -216,6 +217,13 @@ body {
 	}
 }
 
+.sub-menu-toggle {
+	color: $submenu-toggle-link-color;
+	position: absolute;
+	right: 0;
+	z-index: 90;
+}
+
 .menu-mobile {
 	background: $menu-mobile-background-color;
 	bottom: 0;
@@ -234,6 +242,10 @@ body {
 
 	&.visible {
 		right: 0;
+	}
+
+	li {
+		position: relative;
 	}
 
 	.wrap {

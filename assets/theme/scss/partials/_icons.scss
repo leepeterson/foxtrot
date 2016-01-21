@@ -69,6 +69,14 @@
 	}
 }
 
+.sub-menu-toggle {
+	@include ti-before("\f20a", 0);
+
+	&.activated {
+		@include ti-before("\f208", 0);
+	}
+}
+
 /* Meta Icons
 --------------------------------------------- */
 

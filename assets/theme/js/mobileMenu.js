@@ -14,19 +14,27 @@
 		var settings = {
 				menuButton: '#menu-toggle',
 				extraMenus: '#genesis-nav-secondary',
-				menuContainer: '.genesis-nav-menu'
+				menuContainer: '.genesis-nav-menu',
+				submenuButton: $( '<button />', {
+					'id' : '#sub-menu-toggle',
+					'class' : 'sub-menu-toggle',
+					'aria-expanded' : false,
+					'aria-pressed' : false,
+					'role' : 'button'
+				} ),
 			},
 			$body = $( 'body' ),
-			$menuButton, $mainMenu, $extraMenu, $mobileMenu, menuClass;
+			$menuButton, $mainMenu, $extraMenu, $mobileMenu, $submenuButton, menuClass;
 
 		if ( options ) {
 			$.extend( settings, options );
 		}
 
-		$menuButton = $( settings.menuButton );
-		$mainMenu   = $( this );
-		$extraMenu  = $( settings.extraMenus );
-		$mobileMenu = $mainMenu;
+		$menuButton    = $( settings.menuButton );
+		$mainMenu      = $( this );
+		$extraMenu     = $( settings.extraMenus );
+		$mobileMenu    = $mainMenu;
+		$submenuButton = $( settings.submenuButton );
 
 		// Return early if we don't have any menus to work with.
 		if ( 0 === $mainMenu.length && 0 === $extraMenu.length ) {
@@ -39,6 +47,8 @@
 		}
 
 		menuClass = $mobileMenu.attr( 'class' );
+
+		$( 'nav li > ul' ).before( $submenuButton );
 
 		/**
 		 * Debounce a window resize event.
@@ -137,6 +147,8 @@
 		function toggleClasses() {
 			$mobileMenu.toggleClass( 'visible' );
 			$menuButton.toggleClass( 'activated' );
+			$submenuButton.toggleClass( 'visible' );
+			$submenuButton.toggleClass( 'activated' );
 		}
 
 		/**
