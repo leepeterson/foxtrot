@@ -51,6 +51,13 @@ add_filter( 'genesis_attr_menu-toggle', 'foxtrot_attr_menu_toggle', 5 );
 /**
  * Callback defined in includes/attributes.php
  *
+ * @see foxtrot_attr_menu_header
+ */
+add_filter( 'genesis_attr_nav-header', 'foxtrot_attr_menu_header' );
+
+/**
+ * Callback defined in includes/attributes.php
+ *
  * @see foxtrot_attr_menu_secondary
  */
 add_filter( 'genesis_attr_nav-secondary', 'foxtrot_attr_menu_secondary' );

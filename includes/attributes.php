@@ -30,6 +30,20 @@ function foxtrot_attr_menu_toggle( $attr ) {
 }
 
 /**
+ * Header menu attributes.
+ *
+ * @since  0.1.0
+ * @access public
+ * @param  array $attr A list of attributes to add to the element.
+ * @return array
+ */
+function foxtrot_attr_menu_header( $attr ) {
+	$attr['id'] = 'genesis-nav-header';
+
+	return $attr;
+}
+
+/**
  * Secondary menu attributes.
  *
  * @since  0.1.0
