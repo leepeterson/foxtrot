@@ -111,17 +111,6 @@ function foxtrot_site_layouts() {
 }
 
 /**
- * Unregister unnecessary sidebars in Genesis core.
- *
- * @since  0.1.0
- * @access public
- * @return void
- */
-function foxtrot_unregister_sidebars() {
-	unregister_sidebar( 'header-right' );
-}
-
-/**
  * Unset legacy templates from Genesis core.
  *
  * @since  0.1.0

@@ -28,13 +28,6 @@ add_action( 'genesis_setup', 'foxtrot_setup', 20 );
 /**
  * Callback defined in includes/theme-setup.php
  *
- * @see foxtrot_unregister_sidebars
- */
-add_action( 'genesis_setup', 'foxtrot_unregister_sidebars', 20 );
-
-/**
- * Callback defined in includes/theme-setup.php
- *
  * @see foxtrot_register_image_sizes
  */
 add_action( 'init', 'foxtrot_register_image_sizes', 5 );
