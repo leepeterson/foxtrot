@@ -175,6 +175,8 @@
 		function toggleAttributes() {
 			toggleAria( $menuButton, 'aria-pressed' );
 			toggleAria( $menuButton, 'aria-expanded' );
+			toggleAria( $submenuButton, 'aria-pressed' );
+			toggleAria( $submenuButton, 'aria-expanded' );
 			if ( $mobileMenu.attr( 'tabindex' ) ) {
 				$mobileMenu.removeAttr( 'tabindex' );
 			} else {
