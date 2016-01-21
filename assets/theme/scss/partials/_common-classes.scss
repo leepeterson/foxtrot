@@ -5,7 +5,7 @@
 	display: block;
 	position: relative;
 
-	input[type=search] {
+	input[type="search"] {
 		appearance: none;
 		font-size: $base-font-size;
 		padding: 10px;
@@ -13,7 +13,7 @@
 		width: 100%;
 	}
 
-	button[type=submit] {
+	input[type="submit"] {
 		border: 1px solid $base-button-background-color;
 		border-top-left-radius: 0;
 		border-bottom-left-radius: 0;
