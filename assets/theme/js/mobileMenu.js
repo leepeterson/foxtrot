@@ -16,11 +16,11 @@
 				extraMenus: '#genesis-nav-secondary',
 				menuContainer: '.genesis-nav-menu',
 				submenuButton: $( '<button />', {
-					'class' : 'sub-menu-toggle',
-					'aria-expanded' : false,
-					'aria-pressed' : false,
-					'role' : 'button'
-				} ),
+					'class': 'sub-menu-toggle',
+					'aria-expanded': false,
+					'aria-pressed': false,
+					role: 'button'
+				})
 			},
 			$body = $( 'body' ),
 			$menuButton, $mainMenu, $extraMenu, $mobileMenu, $submenuButton, menuClass;
@@ -146,8 +146,6 @@
 		function toggleClasses() {
 			$mobileMenu.toggleClass( 'visible' );
 			$menuButton.toggleClass( 'activated' );
-			$submenuButton.toggleClass( 'visible' );
-			$submenuButton.toggleClass( 'activated' );
 		}
 
 		/**
@@ -174,8 +172,6 @@
 		function toggleAttributes() {
 			toggleAria( $menuButton, 'aria-pressed' );
 			toggleAria( $menuButton, 'aria-expanded' );
-			toggleAria( $submenuButton, 'aria-pressed' );
-			toggleAria( $submenuButton, 'aria-expanded' );
 			if ( $mobileMenu.attr( 'tabindex' ) ) {
 				$mobileMenu.removeAttr( 'tabindex' );
 			} else {
