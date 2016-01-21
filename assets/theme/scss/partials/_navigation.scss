@@ -145,6 +145,19 @@
 			.sub-menu .current-menu-item > a:focus {
 				color: $menu-primary-link-color-hover;
 			}
+
+			.sub-menu {
+
+				a {
+					background-color: $menu-primary-background-color;
+					border-color: $menu-primary-border-color;
+					color: $menu-primary-link-color;
+
+					&:hover {
+						color: $menu-primary-link-color-hover;
+					}
+				}
+			}
 		}
 	}
 }
