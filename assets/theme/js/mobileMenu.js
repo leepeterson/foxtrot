@@ -16,7 +16,6 @@
 				extraMenus: '#genesis-nav-secondary',
 				menuContainer: '.genesis-nav-menu',
 				submenuButton: $( '<button />', {
-					'id' : '#sub-menu-toggle',
 					'class' : 'sub-menu-toggle',
 					'aria-expanded' : false,
 					'aria-pressed' : false,
