@@ -128,9 +128,7 @@
 		 */
 		function reflowMenus() {
 			if ( isHidden( $menuButton ) ) {
-				if ( menusMerged() ) {
-					splitMenus();
-				}
+				splitMenus();
 				$menuButton.removeClass( 'activated' );
 				$mobileMenu.removeClass( 'activated' );
 				$mobileMenu.addClass( menuClass );
@@ -139,9 +137,7 @@
 			} else {
 				$mobileMenu.removeClass( menuClass );
 				$mobileMenu.addClass( 'menu-mobile' );
-				if ( ! menusMerged() ) {
-					mergeMenus();
-				}
+				mergeMenus();
 			}
 		}
 
@@ -154,9 +150,6 @@
 		 */
 		function toggleMenu( event ) {
 			event.preventDefault();
-			if ( ! menusMerged() ) {
-				mergeMenus();
-			}
 			$mobileMenu.toggleClass( 'activated' );
 			$menuButton.toggleClass( 'activated' );
 			$body.toggleClass( 'menu-open' );
