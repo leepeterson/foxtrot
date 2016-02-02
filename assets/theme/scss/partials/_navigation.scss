@@ -103,9 +103,12 @@
 --------------------------------------------- */
 
 .site-header .nav-header {
+	display: none;
+
 	@include min-screen($medium-screen) {
 		@include span(9 of 12);
 		@include last();
+		display: block;
 		text-align: right;
 	}
 
@@ -285,9 +288,10 @@ body {
 		padding: 0;
 	}
 
-	.nav-menu {
+	.genesis-nav-menu {
 		.menu-item {
 			display: block;
+			position: relative;
 		}
 
 		li a {
