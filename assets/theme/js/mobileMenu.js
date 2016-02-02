@@ -162,10 +162,13 @@
 		 * @param {object} event The current event being fired.
 		 * @return void
 		 */
-		function toggleSubMenu() {
+		function toggleSubMenu( event ) {
+			event.preventDefault();
 			var $this = $( this );
 			$this.toggleClass( 'activated' );
 			$this.next( '.sub-menu' ).slideToggle( 'fast' );
+
+			console.log( "fucking js");
 		}
 
 		/**
@@ -176,7 +179,7 @@
 		 */
 		function loadMobileMenu() {
 			$menuButton.on( 'click', toggleMenu );
-			$submenuButton.on( 'click', toggleSubMenu );
+			$( '.sub-menu-toggle' ).on( 'click', toggleSubMenu );
 			debouncedResize(function() {
 				reflowMenus();
 			})();
