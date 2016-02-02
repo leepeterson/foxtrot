@@ -156,6 +156,19 @@
 		}
 
 		/**
+		 * Fire all methods required to either open or close a sub menu.
+		 *
+		 * @since  0.1.0
+		 * @param {object} event The current event being fired.
+		 * @return void
+		 */
+		function toggleSubMenu() {
+			var $this = $( this );
+			$this.toggleClass( 'activated' );
+			$this.next( '.sub-menu' ).slideToggle( 'fast' );
+		}
+
+		/**
 		 * Load all of our mobile menu functionality.
 		 *
 		 * @since  0.1.0
@@ -163,6 +176,7 @@
 		 */
 		function loadMobileMenu() {
 			$menuButton.on( 'click', toggleMenu );
+			$submenuButton.on( 'click', toggleSubMenu );
 			debouncedResize(function() {
 				reflowMenus();
 			})();
