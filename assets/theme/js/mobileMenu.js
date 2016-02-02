@@ -149,35 +149,6 @@
 		}
 
 		/**
-		 * Fire all methods required to open the mobile menu.
-		 *
-		 * @since  0.1.0
-		 * @return void
-		 */
-		function openMenu() {
-			if ( menuIsOpen() ) {
-				return;
-			}
-			if ( ! menusMerged() ) {
-				mergeMenus();
-			}
-			toggleClasses();
-		}
-
-		/**
-		 * Fires all methods required to close the mobile menu.
-		 *
-		 * @since  0.1.0
-		 * @return void
-		 */
-		function closeMenu() {
-			if ( ! menuIsOpen() ) {
-				return;
-			}
-			toggleClasses();
-		}
-
-		/**
 		 * Split or merge our existing menus based on screen width and force the
 		 * menu to close if the screen is larger than the specified width for a
 		 * mobile menu to be displayed.
@@ -190,7 +161,7 @@
 				if ( menusMerged() ) {
 					splitMenus();
 				}
-				closeMenu();
+				toggleClasses();
 				$mobileMenu.addClass( menuClass );
 				$mobileMenu.removeClass( 'menu-mobile' );
 				$body.removeClass( 'menu-open' );
@@ -212,8 +183,10 @@
 		 */
 		function toggleMenu( event ) {
 			event.preventDefault();
-			openMenu();
-			closeMenu();
+			if ( ! menuIsOpen() && ! menusMerged() ) {
+				mergeMenus();
+			}
+			toggleClasses();
 			$body.toggleClass( 'menu-open' );
 		}
 
