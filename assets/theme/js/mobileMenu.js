@@ -75,19 +75,6 @@
 		}
 
 		/**
-		 * Check whether or not the mobile menu is currently open and visible.
-		 *
-		 * @since  0.1.0
-		 * @return {Boolean} Returns true if the menu is open.
-		 */
-		function menuIsOpen() {
-			if ( $body.hasClass( 'menu-open' ) ) {
-				return true;
-			}
-			return false;
-		}
-
-		/**
 		 * Check whether or not our existing menus have been merged into a
 		 * single menu for mobile display.
 		 *
@@ -110,10 +97,10 @@
 		 */
 		function mergeMenus() {
 			if ( 0 === $mainMenu.length || 0 === $extraMenu.length ) {
-				return;
+				return false;
 			}
 
-			if ( ! menusMerged() && ! menuIsOpen() ) {
+			if ( ! menusMerged() ) {
 				$extraMenu.find( settings.menuContainer ).appendTo( $mainMenu.find( settings.menuContainer ) );
 			}
 		}
