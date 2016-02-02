@@ -144,7 +144,7 @@
 		 * @return void
 		 */
 		function toggleClasses() {
-			$mobileMenu.toggleClass( 'visible' );
+			$mobileMenu.toggleClass( 'activated' );
 			$menuButton.toggleClass( 'activated' );
 		}
 
