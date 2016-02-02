@@ -136,19 +136,6 @@
 		}
 
 		/**
-		 * Toggle all classes related to a menu being in an open or closed state
-		 * except for the body class as it is used as a guide for whether or
-		 * not the mobile menu has been opened.
-		 *
-		 * @since  0.1.0
-		 * @return void
-		 */
-		function toggleClasses() {
-			$mobileMenu.toggleClass( 'activated' );
-			$menuButton.toggleClass( 'activated' );
-		}
-
-		/**
 		 * Split or merge our existing menus based on screen width and force the
 		 * menu to close if the screen is larger than the specified width for a
 		 * mobile menu to be displayed.
@@ -161,7 +148,8 @@
 				if ( menusMerged() ) {
 					splitMenus();
 				}
-				toggleClasses();
+				$menuButton.removeClass( 'activated' );
+				$mobileMenu.removeClass( 'activated' );
 				$mobileMenu.addClass( menuClass );
 				$mobileMenu.removeClass( 'menu-mobile' );
 				$body.removeClass( 'menu-open' );
@@ -183,10 +171,11 @@
 		 */
 		function toggleMenu( event ) {
 			event.preventDefault();
-			if ( ! menuIsOpen() && ! menusMerged() ) {
+			if ( ! menusMerged() ) {
 				mergeMenus();
 			}
-			toggleClasses();
+			$mobileMenu.toggleClass( 'activated' );
+			$menuButton.toggleClass( 'activated' );
 			$body.toggleClass( 'menu-open' );
 		}
 
