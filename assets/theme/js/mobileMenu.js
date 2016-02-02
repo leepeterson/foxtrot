@@ -143,8 +143,9 @@
 		 * @since  0.1.0
 		 * @return void
 		 */
-		function toggleActivated( $object ) {
-			return $object.toggleClass( 'activated' );
+		function toggleClasses() {
+			$mobileMenu.toggleClass( 'visible' );
+			$menuButton.toggleClass( 'activated' );
 		}
 
 		/**
@@ -161,11 +162,6 @@
 			});
 		}
 
-		function buttonPressAria( $object ) {
-			toggleAria( $object, 'aria-pressed' );
-			toggleAria( $object, 'aria-expanded' );
-		}
-
 		/**
 		 * Toggle all attributes related to a menu being in an open or closed
 		 * state. Most of these changes are made for a11y reasons.
@@ -173,7 +169,9 @@
 		 * @since  0.1.0
 		 * @return void
 		 */
-		function fixTabIndex() {
+		function toggleAttributes() {
+			toggleAria( $menuButton, 'aria-pressed' );
+			toggleAria( $menuButton, 'aria-expanded' );
 			if ( $mobileMenu.attr( 'tabindex' ) ) {
 				$mobileMenu.removeAttr( 'tabindex' );
 			} else {
@@ -235,6 +233,38 @@
 		}
 
 		/**
+		 * Fire all methods required to open the mobile menu.
+		 *
+		 * @since  0.1.0
+		 * @return void
+		 */
+		function openMenu() {
+			if ( menuIsOpen() ) {
+				return;
+			}
+			if ( ! menusMerged() ) {
+				mergeMenus();
+			}
+			toggleClasses();
+			toggleAttributes();
+			focusMobileMenu();
+		}
+
+		/**
+		 * Fires all methods required to close the mobile menu.
+		 *
+		 * @since  0.1.0
+		 * @return void
+		 */
+		function closeMenu() {
+			if ( ! menuIsOpen() ) {
+				return;
+			}
+			toggleClasses();
+			toggleAttributes();
+		}
+
+		/**
 		 * Split or merge our existing menus based on screen width and force the
 		 * menu to close if the screen is larger than the specified width for a
 		 * mobile menu to be displayed.
@@ -247,7 +277,7 @@
 				if ( menusMerged() ) {
 					splitMenus();
 				}
-				toggleMenu();
+				closeMenu();
 				$mobileMenu.addClass( menuClass );
 				$mobileMenu.removeClass( 'menu-mobile' );
 				$body.removeClass( 'menu-open' );
@@ -269,13 +299,8 @@
 		 */
 		function toggleMenu( event ) {
 			event.preventDefault();
-			toggleActivated( $mobileMenu );
-			toggleActivated( $menuButton );
-			buttonPressAria( $menuButton );
-			fixTabIndex();
-			if ( ! menuIsOpen() ) {
-				focusMobileMenu();
-			}
+			openMenu();
+			closeMenu();
 			$body.toggleClass( 'menu-open' );
 		}
 
