@@ -149,90 +149,6 @@
 		}
 
 		/**
-		 * Toggle aria attributes.
-		 *
-		 * @since  0.2.0
-		 * @param  {button} $object passed through
-		 * @param  {aria-xx} attribute aria attribute to toggle
-		 * @return {bool}
-		 */
-		function toggleAria( $object, attribute ) {
-			$object.attr( attribute, function( index, value ) {
-				return 'false' === value ? 'true' : 'false';
-			});
-		}
-
-		/**
-		 * Toggle all attributes related to a menu being in an open or closed
-		 * state. Most of these changes are made for a11y reasons.
-		 *
-		 * @since  0.1.0
-		 * @return void
-		 */
-		function toggleAttributes() {
-			toggleAria( $menuButton, 'aria-pressed' );
-			toggleAria( $menuButton, 'aria-expanded' );
-			if ( $mobileMenu.attr( 'tabindex' ) ) {
-				$mobileMenu.removeAttr( 'tabindex' );
-			} else {
-				$mobileMenu.attr( 'tabindex', '0' );
-			}
-		}
-
-		/**
-		 * Force the focus state of either the mobile menu or the menu button
-		 * when a user is tabbing through the mobile menu.
-		 *
-		 * When a user opens the mobile menu, it is given the focus so keyboard
-		 * navigation will work correctly while the user tabs through menu items.
-		 *
-		 * When a user tabs out of either the beginning or end of the menu,
-		 * focus is restored to the mobile menu button so the menu can be
-		 * closed by pressing enter.
-		 *
-		 * @since  0.1.0
-		 * @todo   Maybe split this into multiple functions
-		 * @return {booleen} false when focus has been changed.
-		 */
-		function focusMobileMenu() {
-			var nav        = $mobileMenu[0],
-				navID      = $mobileMenu.attr( 'id' ),
-				$items     = $( '#' + navID + ' a' ),
-				$firstItem = $items.first(),
-				$lastItem  = $items.last();
-
-			$mobileMenu.focus();
-
-			$mobileMenu.on( 'keydown', function( e ) {
-				// Return early if we're not using the tab key.
-				if ( 9 !== e.keyCode ) {
-					return;
-				}
-				// Tabbing forwards and tabbing out of the last link.
-				if ( $lastItem[0] === e.target && ! e.shiftKey ) {
-					$menuButton.focus();
-					return false;
-				}
-				// Tabbing backwards and tabbing out of the first link or the menu.
-				if ( ( $firstItem[0] === e.target || nav === e.target ) && e.shiftKey ) {
-					$menuButton.focus();
-					return false;
-				}
-			});
-
-			$menuButton.on( 'keydown', function( e ) {
-				// Return early if we're not using the tab key.
-				if ( 9 !== e.keyCode ) {
-					return;
-				}
-				if ( menuIsOpen() && $menuButton[0] === e.target && ! e.shiftKey ) {
-					$firstItem.focus();
-					return false;
-				}
-			});
-		}
-
-		/**
 		 * Fire all methods required to open the mobile menu.
 		 *
 		 * @since  0.1.0
@@ -246,8 +162,6 @@
 				mergeMenus();
 			}
 			toggleClasses();
-			toggleAttributes();
-			focusMobileMenu();
 		}
 
 		/**
@@ -261,7 +175,6 @@
 				return;
 			}
 			toggleClasses();
-			toggleAttributes();
 		}
 
 		/**
