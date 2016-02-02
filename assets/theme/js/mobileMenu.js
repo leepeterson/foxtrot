@@ -113,13 +113,9 @@
 		 * @return void
 		 */
 		function splitMenus() {
-			var $appendedMenu = $mainMenu.find( 'ul > ul' );
-
-			if ( 0 === $extraMenu.length || 0 === $appendedMenu.length ) {
-				return;
+			if ( menusMerged() ) {
+				$mainMenu.find( 'ul > ul' ).appendTo( $extraMenu.find( '.wrap' ) );
 			}
-
-			$appendedMenu.appendTo( $extraMenu.find( '.wrap' ) );
 		}
 
 		/**
