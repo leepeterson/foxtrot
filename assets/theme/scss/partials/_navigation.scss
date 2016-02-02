@@ -256,8 +256,13 @@ body {
 	margin: 0;
 	position: absolute;
 	right: 0;
-	top: 12px;
+	top: 8px;
 	z-index: 90;
+
+	&:focus,
+	&:hover {
+		color: $menu-mobile-color-hover;
+	}
 }
 
 .menu-mobile {
