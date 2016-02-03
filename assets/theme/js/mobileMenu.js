@@ -163,12 +163,11 @@
 		 * @return void
 		 */
 		function toggleSubMenu( event ) {
-			event.preventDefault();
 			var $this = $( this );
-			$this.toggleClass( 'activated' );
-			$this.next( '.sub-menu' ).slideToggle( 'fast' );
 
-			console.log( "fucking js");
+			event.preventDefault();
+			$this.toggleClass( 'activated' );
+			$this.next( '.sub-menu' ).toggleClass( 'activated' );
 		}
 
 		/**

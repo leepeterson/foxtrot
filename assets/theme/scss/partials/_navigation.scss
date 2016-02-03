@@ -323,6 +323,10 @@ body {
 		position: static;
 		width: 100%;
 
+		&.activated {
+			display: block;
+		}
+
 		li a {
 			background: $menu-mobile-background-color;
 			border: 0;
