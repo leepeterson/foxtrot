@@ -12,8 +12,8 @@
 
 	$.fn.foxtrotMobileMenu = function( options ) {
 		var settings = {
-				menuButton: '#menu-toggle',
-				extraMenus: '#genesis-nav-secondary',
+				menuButton: $( '#menu-toggle' ),
+				extraMenus: $( '#genesis-nav-secondary' ),
 				menuContainer: '.genesis-nav-menu',
 				submenuButton: $( '<button />', {
 					'class': 'sub-menu-toggle',
@@ -23,31 +23,34 @@
 				})
 			},
 			$body = $( 'body' ),
-			$menuButton, $mainMenu, $extraMenu, $mobileMenu, $submenuButton, menuClass;
+			$mainMenu, $extraMenus, $menuButton, $mobileMenu, $submenuButton, $submenuButtons, menuClass;
 
 		if ( options ) {
 			$.extend( settings, options );
 		}
 
-		$menuButton    = $( settings.menuButton );
-		$mainMenu      = $( this );
-		$extraMenu     = $( settings.extraMenus );
-		$mobileMenu    = $mainMenu;
-		$submenuButton = $( settings.submenuButton );
+		$mainMenu       = $( this );
+		$extraMenus     = settings.extraMenus;
+		$menuButton     = settings.menuButton;
+		$submenuButton  = settings.submenuButton;
 
 		// Return early if we don't have any menus to work with.
-		if ( 0 === $mainMenu.length && 0 === $extraMenu.length ) {
+		if ( 0 === $mainMenu.length && 0 === $extraMenus.length ) {
 			return;
 		}
 
+		$mobileMenu = $mainMenu;
+
 		// Use the secondary menu as the mobile menu if we don't have a primary.
 		if ( 0 === $mainMenu.length ) {
-			$mobileMenu = $extraMenu;
+			$mobileMenu = $extraMenus;
 		}
 
 		menuClass = $mobileMenu.attr( 'class' );
 
 		$( 'nav li > ul' ).before( $submenuButton );
+
+		$submenuButtons = $( '.' + $submenuButton.attr( 'class' ) );
 
 		/**
 		 * Debounce a window resize event.
@@ -96,12 +99,12 @@
 		 * @return void
 		 */
 		function mergeMenus() {
-			if ( 0 === $mainMenu.length || 0 === $extraMenu.length ) {
+			if ( 0 === $mainMenu.length || 0 === $extraMenus.length ) {
 				return false;
 			}
 
 			if ( ! menusMerged() ) {
-				$extraMenu.find( settings.menuContainer ).appendTo( $mainMenu.find( settings.menuContainer ) );
+				$extraMenus.find( settings.menuContainer ).appendTo( $mainMenu.find( settings.menuContainer ) );
 			}
 		}
 
@@ -114,7 +117,7 @@
 		 */
 		function splitMenus() {
 			if ( menusMerged() ) {
-				$mainMenu.find( 'ul > ul' ).appendTo( $extraMenu.find( '.wrap' ) );
+				$mainMenu.find( 'ul > ul' ).appendTo( $extraMenus.find( '.wrap' ) );
 			}
 		}
 
@@ -167,7 +170,7 @@
 
 			event.preventDefault();
 			$this.toggleClass( 'activated' );
-			$this.next( '.sub-menu' ).toggleClass( 'activated' );
+			$this.next( 'ul' ).toggleClass( 'activated' );
 		}
 
 		/**
@@ -178,7 +181,7 @@
 		 */
 		function loadMobileMenu() {
 			$menuButton.on( 'click', toggleMenu );
-			$( '.sub-menu-toggle' ).on( 'click', toggleSubMenu );
+			$submenuButtons.on( 'click', toggleSubMenu );
 			debouncedResize(function() {
 				reflowMenus();
 			})();
