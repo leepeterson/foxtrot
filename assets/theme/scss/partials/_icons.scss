@@ -70,10 +70,10 @@
 }
 
 .sub-menu-toggle {
-	@include ti-before("\f20a", 0);
+	@include ti-before("\f208", 0);
 
 	&.activated {
-		@include ti-before("\f208", 0);
+		@include ti-before("\f20b", 0);
 	}
 }
 
