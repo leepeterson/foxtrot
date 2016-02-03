@@ -20,7 +20,10 @@ window.foxtrot = window.foxtrot || {};
 			var $videos = $( '#site-inner' );
 			$body.addClass( 'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch' );
 			$document.gamajoAccessibleMenu();
-			$( '#genesis-nav-primary' ).foxtrotMobileMenu();
+			$( '#genesis-nav-primary' ).foxtrotMobileMenu({
+				extraMenus: $( '#genesis-nav-secondary, #genesis-nav-header' ),
+				menuContainer: '.genesis-nav-menu'
+			});
 			$videos.fitVids();
 		}
 
