@@ -13,8 +13,8 @@
 	$.fn.foxtrotMobileMenu = function( options ) {
 		var settings = {
 				menuButton: $( '#menu-toggle' ),
-				extraMenus: $( '#genesis-nav-secondary' ),
-				menuContainer: '.genesis-nav-menu',
+				extraMenus: '',
+				menuContainer: 'nav-menu',
 				submenuButton: $( '<button />', {
 					'class': 'sub-menu-toggle',
 					'aria-expanded': false,
