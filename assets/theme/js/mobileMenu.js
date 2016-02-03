@@ -166,11 +166,11 @@
 		 * @return void
 		 */
 		function toggleSubMenu( event ) {
-			var $this = $( this );
+			var $button = $( event.target );
 
 			event.preventDefault();
-			$this.toggleClass( 'activated' );
-			$this.next( 'ul' ).toggleClass( 'activated' );
+			$button.toggleClass( 'activated' );
+			$button.next( 'ul' ).toggleClass( 'activated' );
 		}
 
 		/**
