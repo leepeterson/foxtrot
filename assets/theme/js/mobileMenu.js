@@ -104,7 +104,7 @@
 			}
 
 			if ( ! menusMerged() ) {
-				$extraMenus.find( settings.menuContainer ).appendTo( $mainMenu.find( settings.menuContainer ) );
+				$extraMenus.find( settings.menuContainer ).clone().removeAttr( 'id' ).appendTo( $mainMenu.find( settings.menuContainer ) );
 			}
 		}
 
@@ -117,7 +117,7 @@
 		 */
 		function splitMenus() {
 			if ( menusMerged() ) {
-				$mainMenu.find( 'ul > ul' ).appendTo( $extraMenus.find( '.wrap' ) );
+				$mainMenu.find( 'ul > ul' ).remove();
 			}
 		}
 
