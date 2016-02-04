@@ -20,7 +20,10 @@
 					'aria-expanded': false,
 					'aria-pressed': false,
 					role: 'button'
-				})
+				}),
+				activeClass: 'activated',
+				mobileMenuClass: 'menu-mobile',
+				resetCSS: true
 			},
 			$body = $( 'body' ),
 			$mainMenu, $extraMenus, $menuButton, $mobileMenu, $submenuButton, $submenuButtons, menuClass;
@@ -39,6 +42,13 @@
 			return;
 		}
 
+		function addSubmenuButtons( object ) {
+			if ( 0 === object.find( $submenuButton ).length ) {
+				object.find( '.sub-menu' ).before( $submenuButton );
+				console.log( 'submenu buttons added' );
+			}
+		}
+
 		$mobileMenu = $mainMenu;
 
 		// Use the secondary menu as the mobile menu if we don't have a primary.
@@ -48,7 +58,8 @@
 
 		menuClass = $mobileMenu.attr( 'class' );
 
-		$( 'nav li > ul' ).before( $submenuButton );
+		addSubmenuButtons( $mainMenu );
+		addSubmenuButtons( $extraMenus );
 
 		$submenuButtons = $( '.' + $submenuButton.attr( 'class' ) );
 
@@ -75,6 +86,16 @@
 		function isHidden( $object ) {
 			var element = $object[0];
 			return ( null === element.offsetParent );
+		}
+
+		function menuIsOpen() {
+			if ( $body.hasClass( 'menu-open' ) ) {
+				console.log( 'menu is open' );
+				return true;
+			}
+
+			console.log( 'menu is closed' );
+			return false;
 		}
 
 		/**
@@ -105,6 +126,7 @@
 
 			if ( ! menusMerged() ) {
 				$extraMenus.find( settings.menuContainer ).clone().removeAttr( 'id' ).appendTo( $mainMenu.find( settings.menuContainer ) );
+				console.log( 'menus merged' );
 			}
 		}
 
@@ -118,7 +140,20 @@
 		function splitMenus() {
 			if ( menusMerged() ) {
 				$mainMenu.find( 'ul > ul' ).remove();
+				console.log( 'menus split' );
 			}
+		}
+
+		function toggleMobileMenuClasses() {
+			console.log( 'menu classes toggle started' );
+
+			if ( settings.resetCSS ) {
+				console.log( 'menu class toggled' );
+				$mobileMenu.toggleClass( menuClass );
+			}
+			$mobileMenu.toggleClass( settings.mobileMenuClass );
+
+			console.log( 'menu classes toggle ended' );
 		}
 
 		/**
@@ -131,17 +166,33 @@
 		 */
 		function reflowMenus() {
 			if ( isHidden( $menuButton ) ) {
+				console.log( 'menu reflow while open started' );
+				close();
+				toggleMobileMenuClasses();
 				splitMenus();
-				$menuButton.removeClass( 'activated' );
-				$mobileMenu.removeClass( 'activated' );
-				$mobileMenu.addClass( menuClass );
-				$mobileMenu.removeClass( 'menu-mobile' );
-				$body.removeClass( 'menu-open' );
+				console.log( 'menu reflow while open ended' );
 			} else {
-				$mobileMenu.removeClass( menuClass );
-				$mobileMenu.addClass( 'menu-mobile' );
+				console.log( 'menu reflow while closed started' );
 				mergeMenus();
+				toggleMobileMenuClasses();
+				console.log( 'menu reflow while closed ended' );
 			}
+		}
+
+		function open() {
+			console.log( 'menu open started' );
+			$mobileMenu.addClass( settings.activeClass );
+			$menuButton.addClass( settings.activeClass );
+			$body.addClass( 'menu-open' );
+			console.log( 'menu open ended' );
+		}
+
+		function close() {
+			console.log( 'menu close started' );
+			$mobileMenu.removeClass( settings.activeClass );
+			$menuButton.removeClass( settings.activeClass );
+			$body.removeClass( 'menu-open' );
+			console.log( 'menu close ended' );
 		}
 
 		/**
@@ -153,9 +204,12 @@
 		 */
 		function toggleMenu( event ) {
 			event.preventDefault();
-			$mobileMenu.toggleClass( 'activated' );
-			$menuButton.toggleClass( 'activated' );
-			$body.toggleClass( 'menu-open' );
+
+			if ( menuIsOpen() ) {
+				close();
+			} else {
+				open();
+			}
 		}
 
 		/**
@@ -169,8 +223,8 @@
 			var $button = $( event.target );
 
 			event.preventDefault();
-			$button.toggleClass( 'activated' );
-			$button.next( 'ul' ).toggleClass( 'activated' );
+			$button.toggleClass( settings.activeClass );
+			$button.next( 'ul' ).toggleClass( settings.activeClass );
 		}
 
 		/**
@@ -180,11 +234,13 @@
 		 * @return void
 		 */
 		function loadMobileMenu() {
+			console.log( 'Menu load started' );
 			$menuButton.on( 'click', toggleMenu );
 			$submenuButtons.on( 'click', toggleSubMenu );
 			debouncedResize(function() {
 				reflowMenus();
 			})();
+			console.log( 'Menu load ended' );
 		}
 
 		return loadMobileMenu();
