@@ -106,8 +106,6 @@
 	display: none;
 
 	@include min-screen($medium-screen) {
-		@include span(9 of 12);
-		@include last();
 		display: block;
 		text-align: right;
 	}
