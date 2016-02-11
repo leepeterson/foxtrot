@@ -144,16 +144,36 @@
 			}
 		}
 
-		function toggleMobileMenuClasses() {
-			console.log( 'menu classes toggle started' );
+		function removeMobileMenuClasses() {
+			console.log( 'menu classes toggle removed' );
 
-			if ( settings.resetCSS ) {
-				console.log( 'menu class toggled' );
-				$mobileMenu.toggleClass( menuClass );
+			if ( $mobileMenu.hasClass( settings.mobileMenuClass ) ) {
+				console.log( 'mobile menu class removed' );
+				$mobileMenu.removeClass( settings.mobileMenuClass );
 			}
-			$mobileMenu.toggleClass( settings.mobileMenuClass );
 
-			console.log( 'menu classes toggle ended' );
+			if ( settings.resetCSS && ! $mobileMenu.hasClass( menuClass ) ) {
+				console.log( menuClass + ' removed' );
+				$mobileMenu.addClass( menuClass );
+			}
+
+			console.log( 'menu classes toggle removed' );
+		}
+
+		function addMobileMenuClasses() {
+			console.log( 'menu classes toggle added' );
+
+			if ( ! $mobileMenu.hasClass( settings.mobileMenuClass ) ) {
+				console.log( 'mobile menu class added' );
+				$mobileMenu.addClass( settings.mobileMenuClass );
+			}
+
+			if ( settings.resetCSS && $mobileMenu.hasClass( menuClass ) ) {
+				console.log( menuClass + ' added' );
+				$mobileMenu.removeClass( menuClass );
+			}
+
+			console.log( 'menu classes toggle added' );
 		}
 
 		/**
@@ -166,16 +186,18 @@
 		 */
 		function reflowMenus() {
 			if ( isHidden( $menuButton ) ) {
-				console.log( 'menu reflow while open started' );
-				close();
-				toggleMobileMenuClasses();
+				console.log( 'menu reflow while menu button hidden started' );
+				if ( menuIsOpen() ) {
+					close();
+				}
+				removeMobileMenuClasses();
 				splitMenus();
-				console.log( 'menu reflow while open ended' );
+				console.log( 'menu reflow while menu button hidden ended' );
 			} else {
-				console.log( 'menu reflow while closed started' );
+				console.log( 'menu reflow while menu button visible started' );
 				mergeMenus();
-				toggleMobileMenuClasses();
-				console.log( 'menu reflow while closed ended' );
+				addMobileMenuClasses();
+				console.log( 'menu reflow while menu button visible ended' );
 			}
 		}
 
