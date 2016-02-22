@@ -20,7 +20,10 @@ window.foxtrot = window.foxtrot || {};
 			var $videos = $( '#site-inner' );
 			$body.addClass( 'ontouchstart' in window || 'onmsgesturechange' in window ? 'touch' : 'no-touch' );
 			$document.gamajoAccessibleMenu();
-			$document.foxtrotMobileMenu();
+			$( '#genesis-nav-primary' ).foxtrotMobileMenu({
+				extraMenus: $( '#genesis-nav-secondary, #genesis-nav-header' ),
+				menuContainer: '.genesis-nav-menu'
+			});
 			$videos.fitVids();
 		}
 
@@ -28,7 +31,6 @@ window.foxtrot = window.foxtrot || {};
 
 	// Document ready.
 	jQuery(function() {
-		skipLinkFocus.init();
 		foxtrot.globalInit();
 	});
 })( this, jQuery );

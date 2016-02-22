@@ -46,6 +46,7 @@ textarea {
 
 select {
 	@extend %text-input-base-style;
+	width: 100%;
 }
 
 input[type="checkbox"],

@@ -44,33 +44,73 @@
 /* Content
 -------------------- */
 
-.layout-1c-narrow .content {
+.full-width-slim .content {
 	padding: 0;
 }
 
 @include min-screen($medium-screen) {
 
-	.layout-1c-narrow .content {
+	.full-width-slim .content {
 		@include pad(15%);
 	}
 
-	.layout-2c-l .content,
-	.layout-2c-r .content {
-		@include span(8 of 12);
+	.content-sidebar,
+	.content-sidebar-sidebar,
+	.sidebar-content,
+	.sidebar-content-sidebar,
+	.sidebar-sidebar-content {
+
+		.content {
+			@include span(8 of 12);
+		}
 	}
 
-	.layout-2c-l .content {
-		@include last();
+	.full-width-content .content {
+		@include full();
+	}
+
+	.sidebar-content,
+	.sidebar-sidebar-content {
+
+		.content {
+			@include last();
+		}
+	}
+
+	.content-sidebar-sidebar .content-sidebar-wrap {
+		float: left;
+	}
+
+	.content-sidebar-sidebar,
+	.sidebar-content-sidebar,
+	.sidebar-sidebar-content {
+
+		.content-sidebar-wrap {
+			@include span(10 of 12);
+		}
+	}
+
+	.sidebar-content-sidebar,
+	.sidebar-sidebar-content {
+
+		.content-sidebar-wrap {
+			@include last();
+		}
 	}
 
 	/* Primary Sidebar
 	-------------------- */
-	.sidebar {
+	.sidebar-primary {
 		@include span(4 of 12);
 	}
 
-	.layout-2c-r .sidebar {
-		@include last();
+	.content-sidebar,
+	.sidebar-content-sidebar,
+	.content-sidebar-sidebar {
+
+		.sidebar-primary {
+			@include last();
+		}
 	}
 
 	/* Secondary Sidebar
@@ -82,11 +122,6 @@
 	.content-sidebar-sidebar .sidebar-secondary {
 		@include last();
 	}
-}
-
-.layout-1c .sidebar,
-.layout-1c-narrow .sidebar {
-	display: none;
 }
 
 /* Column Classes

@@ -6,7 +6,7 @@
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
- * @since      1.0.0
+ * @since      0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Add a 'landing' class to the <body> element.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @param  array $classes The existing body classes.
  * @return array $classes The modified body classes.

@@ -6,7 +6,7 @@
  * @subpackage Foxtrot
  * @author     Robert Neu
  * @copyright  Copyright (c) 2016, WP Site Care, LLC
- * @since      1.0.0
+ * @since      0.1.0
  */
 
 defined( 'ABSPATH' ) || exit;
@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 /**
  * Return a suffix to load minified JavaScript on production.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return string
  */
@@ -26,7 +26,7 @@ function foxtrot_get_suffix() {
  * Filter the 'stylesheet_uri' to load a minified version of 'style.css'
  * file if it is available.
  *
- * @since  0.2.0
+ * @since  0.1.0
  * @access public
  * @param  string $stylesheet_uri The URI of the active theme's stylesheet.
  * @param  string $stylesheet_dir_uri The directory URI of the active theme's stylesheet.
@@ -43,7 +43,7 @@ function foxtrot_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 	// Change the stylesheet name to 'style.min.css'.
 	$stylesheet = str_replace( '.css', "{$suffix}.css", $stylesheet );
 
-	if ( file_exists( FOXTROT_DIR . $stylesheet ) ) {
+	if ( file_exists( CHILD_THEME_DIR . $stylesheet ) ) {
 		$stylesheet_uri = esc_url( trailingslashit( $stylesheet_dir_uri ) . $stylesheet );
 	}
 
@@ -53,7 +53,7 @@ function foxtrot_min_stylesheet_uri( $stylesheet_uri, $stylesheet_dir_uri ) {
 /**
  * Build a Google Fonts string.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @param  string $families the font families to include.
  * @param  bool   $editor_style set to true if string is being used as editor style.
@@ -68,7 +68,7 @@ function foxtrot_google_fonts_string( $families, $editor_style = false ) {
  * Load a minified version of the theme's stylesheet along with any other
  * required theme CSS files.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
@@ -86,12 +86,12 @@ function foxtrot_enqueue_styles() {
 /**
  * Register and load JavaScript files.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */
 function foxtrot_enqueue_scripts() {
-	$js_uri  = trailingslashit( get_template_directory_uri() ) . 'js/';
+	$js_uri  = trailingslashit( get_stylesheet_directory_uri() ) . 'js/';
 	$suffix  = foxtrot_get_suffix();
 
 	wp_enqueue_script(
@@ -107,7 +107,7 @@ function foxtrot_enqueue_scripts() {
  * Replace the default theme stylesheet with a RTL version when a RTL
  * language is being used.
  *
- * @since  1.0.0
+ * @since  0.1.0
  * @access public
  * @return void
  */

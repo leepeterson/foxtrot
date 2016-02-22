@@ -1,4 +1,4 @@
-.nav-menu {
+.genesis-nav-menu {
 	clear: both;
 	font-size: 0.001px;
 	line-height: 1;
@@ -50,7 +50,7 @@
 		}
 
 		.sub-menu {
-			margin: -53px 0 0 199px;
+			margin: -55px 0 0 199px;
 		}
 	}
 
@@ -102,10 +102,11 @@
 /* Primary Navigation
 --------------------------------------------- */
 
-.site-header .menu-primary {
+.site-header .nav-header {
+	display: none;
+
 	@include min-screen($medium-screen) {
-		@include span(9 of 12);
-		@include last();
+		display: block;
 		text-align: right;
 	}
 
@@ -123,11 +124,42 @@
 	}
 }
 
-.menu-primary {
+.nav-primary {
 	display: none;
 
 	@include min-screen($medium-screen) {
+		background: $menu-primary-background-color;
 		display: block;
+
+		.genesis-nav-menu {
+
+			> li > a {
+				color: $menu-primary-link-color;
+			}
+
+			li a:hover,
+			li a:focus,
+			.current-menu-item > a,
+			.current-menu-ancestor > a,
+			.current-menu-parent > a,
+			.sub-menu .current-menu-item > a:hover,
+			.sub-menu .current-menu-item > a:focus {
+				color: $menu-primary-link-color-hover;
+			}
+
+			.sub-menu {
+
+				a {
+					background-color: $menu-primary-background-color;
+					border-color: $menu-primary-border-color;
+					color: $menu-primary-link-color;
+
+					&:hover {
+						color: $menu-primary-link-color-hover;
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -150,7 +182,7 @@
 /* Secondary Navigation
 --------------------------------------------- */
 
-.menu-secondary {
+.nav-secondary {
 	background-color: $menu-secondary-background-color;
 	border-bottom: 1px solid $menu-secondary-border-color;
 	display: none;
@@ -185,7 +217,8 @@ body {
 	}
 }
 
-.menu-toggle {
+.menu-toggle,
+.sub-menu-toggle {
 	background: $menu-toggle-background-color;
 	border-radius: $base-border-radius;
 	color: $menu-toggle-link-color;
@@ -216,6 +249,20 @@ body {
 	}
 }
 
+.sub-menu-toggle {
+	color: $submenu-toggle-link-color;
+	margin: 0;
+	position: absolute;
+	right: 0;
+	top: 8px;
+	z-index: 90;
+
+	&:focus,
+	&:hover {
+		color: $menu-mobile-color-hover;
+	}
+}
+
 .menu-mobile {
 	background: $menu-mobile-background-color;
 	bottom: 0;
@@ -232,17 +279,22 @@ body {
 		outline: none;
 	}
 
-	&.visible {
+	&.activated {
 		right: 0;
+	}
+
+	li {
+		position: relative;
 	}
 
 	.wrap {
 		padding: 0;
 	}
 
-	.nav-menu {
+	.genesis-nav-menu {
 		.menu-item {
 			display: block;
+			position: relative;
 		}
 
 		li a {
@@ -263,10 +315,15 @@ body {
 		background: transparent;
 		border-top: 0;
 		box-shadow: none;
+		display: none;
 		margin: 0;
 		opacity: 1;
 		position: static;
 		width: 100%;
+
+		&.activated {
+			display: block;
+		}
 
 		li a {
 			background: $menu-mobile-background-color;

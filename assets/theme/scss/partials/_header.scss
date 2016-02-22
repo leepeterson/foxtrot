@@ -16,11 +16,12 @@
 /* Title Area
 --------------------------------------------- */
 
-.site-branding {
+.title-area {
+	@include span(6 of 12);
 	display: inline-block;
 	float: none;
 	margin-right: 0;
-	width: auto;
+	text-align: left;
 
 	@include min-screen($medium-screen) {
 		@include span(3 of 12);
@@ -54,15 +55,53 @@
 	margin-bottom: 0;
 }
 
+.header-image {
+
+	.site-description,
+	.site-title {
+		display: block;
+		text-indent: -9999px;
+	}
+
+	.site-title > a {
+		@include full();
+
+		background: url(images/logo.png) no-repeat scroll center center transparent;
+		min-height: 69px;
+
+		@include hdpi(2) {
+			background-image: url(images/logo@2x.png);
+			background-size: 215px 69px;
+		}
+	}
+}
+
 /* Header Right
 --------------------------------------------- */
 
-.header-right {
-	@include span(9 of 12);
-	@include last();
+.header-widget-area {
+	@include span(last 6 of 12);
 	text-align: right;
+
+	@include min-screen($medium-screen) {
+		@include span(last 9 of 12);
+	}
 
 	.widget {
 		margin: 0;
+
+		li li {
+			margin-left: 0;
+		}
+	}
+}
+
+/* Full-Width Header
+--------------------------------------------- */
+
+.header-full-width {
+	.header-widget-area,
+	.title-area {
+		@include full();
 	}
 }

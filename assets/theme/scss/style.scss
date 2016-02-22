@@ -1,13 +1,13 @@
 /**
  * Theme Name:       Foxtrot
- * Version:          1.0.0
+ * Version:          0.1.0
  * Description:      The WP Site Care Genesis sample theme.
  * Author:           WP Site Care
  * Author URI:       http://www.wpsitecare.com
  * Theme URI:        https://github.com/wpsitecare/foxtrot
  * Template:         genesis
  * Template Version: 2.2.6
- * Tags:             white, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, 'seo-friendly', microformats, post-formats, sticky-post, translation-ready
+ * Tags:             white, light, one-column, two-columns, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, 'seo-friendly', microformats, post-formats, sticky-post, translation-ready, accessibility-ready
  * Text Domain:      foxtrot
  * Domain Path:      /languages
  * License:          GPL-2.0+
@@ -75,7 +75,6 @@ Site Header
 Site Navigation
 ----------------------------------------------------------------------------- */
 @import "partials/navigation";
-
 
 /*
 Content Area
