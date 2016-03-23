@@ -40,9 +40,7 @@ module.exports = {
 		]
 	},
 	php: {
-		files: [
-
-		]
+		files: []
 	},
 	images: {
 		files: [
