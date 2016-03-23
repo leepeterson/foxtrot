@@ -41,18 +41,7 @@ module.exports = {
 	},
 	php: {
 		files: [
-			{
-				expand: true,
-				cwd: '<%= paths.composer %>wpsitecare/carelib',
-				src: ['**/*'],
-				dest: 'includes/vendor/carelib'
-			},
-			{
-				expand: true,
-				cwd: '<%= paths.composer %>zamoose/themehookalliance',
-				src: ['tha-theme-hooks.php'],
-				dest: 'includes/vendor/'
-			}
+
 		]
 	},
 	images: {
