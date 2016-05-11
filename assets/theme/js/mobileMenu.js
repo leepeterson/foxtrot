@@ -45,7 +45,6 @@
 		function addSubmenuButtons( object ) {
 			if ( 0 === object.find( $submenuButton ).length ) {
 				object.find( '.sub-menu' ).before( $submenuButton );
-				console.log( 'submenu buttons added' );
 			}
 		}
 
@@ -90,11 +89,9 @@
 
 		function menuIsOpen() {
 			if ( $body.hasClass( 'menu-open' ) ) {
-				console.log( 'menu is open' );
 				return true;
 			}
 
-			console.log( 'menu is closed' );
 			return false;
 		}
 
@@ -126,7 +123,6 @@
 
 			if ( ! menusMerged() ) {
 				$extraMenus.find( settings.menuContainer ).clone().removeAttr( 'id' ).appendTo( $mainMenu.find( settings.menuContainer ) );
-				console.log( 'menus merged' );
 			}
 		}
 
@@ -140,40 +136,31 @@
 		function splitMenus() {
 			if ( menusMerged() ) {
 				$mainMenu.find( 'ul > ul' ).remove();
-				console.log( 'menus split' );
 			}
 		}
 
 		function removeMobileMenuClasses() {
-			console.log( 'menu classes toggle removed' );
 
 			if ( $mobileMenu.hasClass( settings.mobileMenuClass ) ) {
-				console.log( 'mobile menu class removed' );
 				$mobileMenu.removeClass( settings.mobileMenuClass );
 			}
 
 			if ( settings.resetCSS && ! $mobileMenu.hasClass( menuClass ) ) {
-				console.log( menuClass + ' removed' );
 				$mobileMenu.addClass( menuClass );
 			}
 
-			console.log( 'menu classes toggle removed' );
 		}
 
 		function addMobileMenuClasses() {
-			console.log( 'menu classes toggle added' );
 
 			if ( ! $mobileMenu.hasClass( settings.mobileMenuClass ) ) {
-				console.log( 'mobile menu class added' );
 				$mobileMenu.addClass( settings.mobileMenuClass );
 			}
 
 			if ( settings.resetCSS && $mobileMenu.hasClass( menuClass ) ) {
-				console.log( menuClass + ' added' );
 				$mobileMenu.removeClass( menuClass );
 			}
 
-			console.log( 'menu classes toggle added' );
 		}
 
 		/**
@@ -186,35 +173,27 @@
 		 */
 		function reflowMenus() {
 			if ( isHidden( $menuButton ) ) {
-				console.log( 'menu reflow while menu button hidden started' );
 				if ( menuIsOpen() ) {
 					close();
 				}
 				removeMobileMenuClasses();
 				splitMenus();
-				console.log( 'menu reflow while menu button hidden ended' );
 			} else {
-				console.log( 'menu reflow while menu button visible started' );
 				mergeMenus();
 				addMobileMenuClasses();
-				console.log( 'menu reflow while menu button visible ended' );
 			}
 		}
 
 		function open() {
-			console.log( 'menu open started' );
 			$mobileMenu.addClass( settings.activeClass );
 			$menuButton.addClass( settings.activeClass );
 			$body.addClass( 'menu-open' );
-			console.log( 'menu open ended' );
 		}
 
 		function close() {
-			console.log( 'menu close started' );
 			$mobileMenu.removeClass( settings.activeClass );
 			$menuButton.removeClass( settings.activeClass );
 			$body.removeClass( 'menu-open' );
-			console.log( 'menu close ended' );
 		}
 
 		/**
@@ -256,13 +235,11 @@
 		 * @return void
 		 */
 		function loadMobileMenu() {
-			console.log( 'Menu load started' );
 			$menuButton.on( 'click', toggleMenu );
 			$submenuButtons.on( 'click', toggleSubMenu );
 			debouncedResize(function() {
 				reflowMenus();
 			})();
-			console.log( 'Menu load ended' );
 		}
 
 		return loadMobileMenu();
